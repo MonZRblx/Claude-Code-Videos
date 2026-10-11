@@ -1,0 +1,21 @@
+<template id="hud-template">
+<div data-composition-id="hud" data-width="1080" data-height="1920" data-start="0" data-duration="30.0">
+<svg class="hud-flag" id="hud-fl" viewBox="0 0 96 64" style="left:28px"><rect width="32" height="64" fill="#006847"/><rect x="32" width="32" height="64" fill="#fff"/><rect x="64" width="32" height="64" fill="#CE1126"/><g transform="translate(48 33)"><ellipse cx="0" cy="-2" rx="7.5" ry="8.5" fill="#7a4a1e"/><circle cx="-4" cy="-10" r="3" fill="#7a4a1e"/><path d="M-4 -12 l-4 1 l4 1z" fill="#d9a441"/><path d="M-5 -4 Q-14 -2 -13 6 Q-8 1 -4 3Z" fill="#a0642a"/><path d="M5 -4 Q14 -2 13 6 Q8 1 4 3Z" fill="#a0642a"/><path d="M-13 9 Q0 19 13 9" fill="none" stroke="#2d8a3e" stroke-width="2.6" stroke-linecap="round"/><ellipse cx="0" cy="10.5" rx="6" ry="2.2" fill="#3aa0d8"/></g></svg><svg class="hud-flag" id="hud-fr" viewBox="0 0 96 64" style="left:956px"><rect width="32" height="64" fill="#006847"/><rect x="32" width="32" height="64" fill="#fff"/><rect x="64" width="32" height="64" fill="#CE1126"/><g transform="translate(48 33)"><ellipse cx="0" cy="-2" rx="7.5" ry="8.5" fill="#7a4a1e"/><circle cx="-4" cy="-10" r="3" fill="#7a4a1e"/><path d="M-4 -12 l-4 1 l4 1z" fill="#d9a441"/><path d="M-5 -4 Q-14 -2 -13 6 Q-8 1 -4 3Z" fill="#a0642a"/><path d="M5 -4 Q14 -2 13 6 Q8 1 4 3Z" fill="#a0642a"/><path d="M-13 9 Q0 19 13 9" fill="none" stroke="#2d8a3e" stroke-width="2.6" stroke-linecap="round"/><ellipse cx="0" cy="10.5" rx="6" ry="2.2" fill="#3aa0d8"/></g></svg><div class="hud-handle" id="hud-hd">@monzmc05</div><div class="hud-tag" id="hud-tg">SOLO <b>MÉXICO</b></div>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const D = {"total": 30.0};
+
+  tl.fromTo("#hud-fl", { y: -100, opacity: 0 }, { y: 0, opacity: 1, duration: .35, ease: "back.out(2)" }, .02);
+  tl.fromTo("#hud-fr", { y: -100, opacity: 0 }, { y: 0, opacity: 1, duration: .35, ease: "back.out(2)" }, .06);
+  tl.fromTo("#hud-hd", { x: -160, opacity: 0 }, { x: 0, opacity: 1, duration: .3, ease: "power3.out" }, .08);
+  tl.fromTo("#hud-tg", { y: -50, opacity: 0 }, { y: 0, opacity: 1, duration: .3, ease: "power3.out" }, .1);
+  tl.to("#hud-fl", { rotation: 3, duration: 1, yoyo: true, repeat: Math.ceil(D.total), ease: "sine.inOut" }, .6);
+  tl.to("#hud-fr", { rotation: -3, duration: 1, yoyo: true, repeat: Math.ceil(D.total), ease: "sine.inOut" }, .8);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["hud"] = tl;
+})();
+</script>
+</div>
+</template>

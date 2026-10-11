@@ -1,0 +1,24 @@
+<template id="intro-template">
+<div data-composition-id="intro" data-width="1080" data-height="1920" data-start="0" data-duration="1.641">
+<div class="scn" id="i"><div class="beam" id="i-beam"></div><div class="mz" id="i-t1" style="top:380px"><span class="mask"><span class="rv" style="display:inline-block"><span class="gtw"><span class="o">MONZ</span><span class="f ">MONZ</span></span></span></span></div><div class="mz" id="i-t2" style="top:560px;font-size:150px"><span class="mask"><span class="rv" style="display:inline-block"><span class="gtw"><span class="o">STORE</span><span class="f wh">STORE</span></span></span></span></div><div class="mini c-perm" id="i-m0" style="left:70px;top:900px"><div class="d"></div><svg viewBox="0 0 64 64"><path d="M32 6 L54 24 L32 58 L10 24Z" fill="#FFB000" stroke="#fff" stroke-width="3" stroke-linejoin="round"/><path d="M10 24H54M24 24 L32 6 L40 24 L32 58 L24 24" fill="none" stroke="#fff" stroke-width="2.4" stroke-linejoin="round"/></svg><div class="lb">PERMANENTES</div></div><div class="mini c-fis" id="i-m1" style="left:285px;top:900px"><div class="d"></div><svg viewBox="0 0 64 64"><circle cx="32" cy="38" r="20" fill="#FF2D6F" stroke="#fff" stroke-width="3"/><path d="M32 18 Q32 8 38 6" stroke="#fff" fill="none" stroke-width="3.2" stroke-linecap="round"/><path d="M34 14 Q46 6 52 14 Q42 20 34 14Z" fill="#3ddc84" stroke="#fff" stroke-width="2.4"/><path d="M22 34 Q24 28 30 28" stroke="#fff" fill="none" stroke-width="3" stroke-linecap="round" opacity=".8"/></svg><div class="lb">FÍSICAS</div></div><div class="mini c-gp" id="i-m2" style="left:500px;top:900px"><div class="d"></div><svg viewBox="0 0 64 64"><path d="M8 18 H56 V26 a6 6 0 0 0 0 12 V46 H8 V38 a6 6 0 0 0 0 -12Z" fill="#2D9BFF" stroke="#fff" stroke-width="3" stroke-linejoin="round"/><path d="M32 24 L35 31 L42 31 L36.5 35.5 L38.5 42 L32 38 L25.5 42 L27.5 35.5 L22 31 L29 31Z" fill="#fff"/></svg><div class="lb">GAMEPASSES</div></div><div class="mini c-skin" id="i-m3" style="left:715px;top:900px"><div class="d"></div><svg viewBox="0 0 64 64"><path d="M32 4 L39 25 L60 32 L39 39 L32 60 L25 39 L4 32 L25 25Z" fill="#A64DFF" stroke="#fff" stroke-width="3" stroke-linejoin="round"/><circle cx="50" cy="12" r="4" fill="#fff"/></svg><div class="lb">SKINS</div></div><div class="phrase c-gold" id="i-ph"><span class="pw">TODO</span><span class="pw">PARA</span><span class="pw">TU</span><span class="pw a">INVENTARIO</span></div></div>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const D = {"dur": 1.6407};
+
+  tl.fromTo("#i-beam", { rotation: -25 }, { rotation: 25, duration: D.dur, ease: "none" }, 0);
+  document.querySelectorAll("#i-t1 .rv, #i-t2 .rv").forEach((el, i) => tl.fromTo(el, { y: 240 }, { y: 0, duration: .36, ease: "expo.out" }, .1 + i * .08));
+  document.querySelectorAll("#i-t1 .f, #i-t2 .f").forEach((el, i) => tl.fromTo(el, { backgroundPosition: "160% 0, 0 0" }, { backgroundPosition: "-60% 0, 0 0", duration: .6, ease: "power2.inOut" }, .28 + i * .1));
+  [0, 1, 2, 3].forEach(i => {
+    tl.fromTo("#i-m" + i, { y: 80, scale: .5, opacity: 0, rotationY: 90 }, { y: 0, scale: 1, opacity: 1, rotationY: 0, duration: .32, ease: "back.out(1.6)" }, .45 + i * .08);
+  });
+  document.querySelectorAll("#i-ph .pw").forEach((el, i) => tl.fromTo(el, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: .2, ease: "power3.out" }, .5 + i * .07));
+  tl.to(["#i-t1", "#i-t2"], { scale: 7, opacity: 0, duration: .3, ease: "power3.in" }, D.dur - .3);
+  tl.to(["#i-m0", "#i-m1", "#i-m2", "#i-m3", "#i-ph"], { opacity: 0, scale: .9, duration: .18, ease: "power2.in" }, D.dur - .28);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["intro"] = tl;
+})();
+</script>
+</div>
+</template>

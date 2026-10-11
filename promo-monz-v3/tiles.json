@@ -1,0 +1,176 @@
+{
+ "tile": [
+  102,
+  119
+ ],
+ "tiles": [
+  {
+   "cat": "perm",
+   "file": "perm_0.png",
+   "name": "Dragón Permanente",
+   "price": 625,
+   "src": 14
+  },
+  {
+   "cat": "perm",
+   "file": "perm_1.png",
+   "name": "Control Permanente",
+   "price": 500,
+   "src": 14
+  },
+  {
+   "cat": "perm",
+   "file": "perm_2.png",
+   "name": "Kitsune Permanente",
+   "price": 500,
+   "src": 14
+  },
+  {
+   "cat": "perm",
+   "file": "perm_3.png",
+   "name": "Magnet Permanente",
+   "price": 440,
+   "src": 14
+  },
+  {
+   "cat": "perm",
+   "file": "perm_4.png",
+   "name": "Yeti Permanente",
+   "price": 375,
+   "src": 14
+  },
+  {
+   "cat": "perm",
+   "file": "perm_5.png",
+   "name": "Tiger Permanente",
+   "price": 375,
+   "src": 14
+  },
+  {
+   "cat": "fis",
+   "file": "fis_0.png",
+   "name": "Dragón West",
+   "price": 360,
+   "src": 18
+  },
+  {
+   "cat": "fis",
+   "file": "fis_1.png",
+   "name": "Dragón East",
+   "price": 320,
+   "src": 18
+  },
+  {
+   "cat": "fis",
+   "file": "fis_2.png",
+   "name": "Magnet",
+   "price": 140,
+   "src": 18
+  },
+  {
+   "cat": "fis",
+   "file": "fis_3.png",
+   "name": "Kitsune",
+   "price": 100,
+   "src": 18
+  },
+  {
+   "cat": "fis",
+   "file": "fis_4.png",
+   "name": "Control",
+   "price": 55,
+   "src": 18
+  },
+  {
+   "cat": "fis",
+   "file": "fis_5.png",
+   "name": "Yeti",
+   "price": 50,
+   "src": 18
+  },
+  {
+   "cat": "gp",
+   "file": "gp_0.png",
+   "name": "Fruit Notifier",
+   "price": 340,
+   "src": 20
+  },
+  {
+   "cat": "gp",
+   "file": "gp_1.png",
+   "name": "Dark Blade",
+   "price": 150,
+   "src": 20
+  },
+  {
+   "cat": "gp",
+   "file": "gp_2.png",
+   "name": "2x Mastery",
+   "price": 60,
+   "src": 20
+  },
+  {
+   "cat": "gp",
+   "file": "gp_3.png",
+   "name": "2x Money",
+   "price": 60,
+   "src": 20
+  },
+  {
+   "cat": "gp",
+   "file": "gp_4.png",
+   "name": "+1 Fruit Storage",
+   "price": 50,
+   "src": 20
+  },
+  {
+   "cat": "gp",
+   "file": "gp_5.png",
+   "name": "Fast Boats",
+   "price": 45,
+   "src": 20
+  },
+  {
+   "cat": "skin",
+   "file": "skin_0.png",
+   "name": "Galaxy Empyrean Kits...",
+   "price": 950,
+   "src": 21
+  },
+  {
+   "cat": "skin",
+   "file": "skin_1.png",
+   "name": "Ember Dragon",
+   "price": 650,
+   "src": 21
+  },
+  {
+   "cat": "skin",
+   "file": "skin_2.png",
+   "name": "Purple Lightbning",
+   "price": 550,
+   "src": 21
+  },
+  {
+   "cat": "skin",
+   "file": "skin_3.png",
+   "name": "Arcsteel Magnet",
+   "price": 350,
+   "src": 21
+  },
+  {
+   "cat": "skin",
+   "file": "skin_4.png",
+   "name": "Super Spirit Pain",
+   "price": 340,
+   "src": 21
+  },
+  {
+   "cat": "skin",
+   "file": "skin_5.png",
+   "name": "Red Lightning",
+   "price": 285,
+   "src": 21
+  }
+ ]
+}

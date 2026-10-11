@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080, height=1920">
+<title>Promo MonZ - Showreel</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="30.0">
+  <script src="assets/vendor/gsap.min.js"></script>
+  <div id="mt-bg" class="clip mount m-bg" data-composition-id="bg" data-composition-src="compositions/bg.html" data-start="0" data-duration="30.0" data-track-index="0"></div>
+  <div id="mt-hook" class="clip mount m-scn" data-composition-id="hook" data-composition-src="compositions/hook.html" data-start="0.0" data-duration="1.4062" data-track-index="1"></div>
+  <div id="mt-intro" class="clip mount m-scn" data-composition-id="intro" data-composition-src="compositions/intro.html" data-start="1.4062" data-duration="1.6407" data-track-index="1"></div>
+  <div id="mt-scene-perm" class="clip mount m-scn" data-composition-id="scene-perm" data-composition-src="compositions/scene-perm.html" data-start="3.0469" data-duration="5.3906" data-track-index="1"></div>
+  <div id="mt-scene-fis" class="clip mount m-scn" data-composition-id="scene-fis" data-composition-src="compositions/scene-fis.html" data-start="8.4375" data-duration="5.1563" data-track-index="1"></div>
+  <div id="mt-scene-gp" class="clip mount m-scn" data-composition-id="scene-gp" data-composition-src="compositions/scene-gp.html" data-start="13.5938" data-duration="4.4531" data-track-index="1"></div>
+  <div id="mt-scene-skin" class="clip mount m-scn" data-composition-id="scene-skin" data-composition-src="compositions/scene-skin.html" data-start="18.0469" data-duration="4.4531" data-track-index="1"></div>
+  <div id="mt-trust" class="clip mount m-scn" data-composition-id="trust" data-composition-src="compositions/trust.html" data-start="22.5" data-duration="3.9844" data-track-index="1"></div>
+  <div id="mt-close" class="clip mount m-scn" data-composition-id="close" data-composition-src="compositions/close.html" data-start="26.4844" data-duration="3.5156" data-track-index="1"></div>
+  <div id="mt-fx" class="clip mount m-fx" data-composition-id="fx" data-composition-src="compositions/fx.html" data-start="0" data-duration="30.0" data-track-index="3"></div>
+  <div id="mt-hud" class="clip mount m-hud" data-composition-id="hud" data-composition-src="compositions/hud.html" data-start="0" data-duration="30.0" data-track-index="4"></div>
+  <audio id="mix" src="assets/audio.mp3" data-start="0" data-duration="30.0" data-track-index="9" data-volume="1"></audio>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.to({}, { duration: 30.0 }, 0);
+    window.__timelines = window.__timelines || {};
+    window.__timelines["root"] = tl;
+  </script>
+</div>
+</body>
+</html>

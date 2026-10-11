@@ -1,0 +1,43 @@
+<template id="scene-fis-template">
+<div data-composition-id="scene-fis" data-width="1080" data-height="1920" data-start="0" data-duration="5.156">
+<div class="scn c-fis" id="fis"><div class="hz-t"></div><div class="hz-b"></div><div class="beam tint" id="fis-bm"></div><div class="rail" id="fis-r1" style="left:112px"></div><div class="rail" id="fis-r2" style="left:962px"></div><div class="zone"><div><div class="gl" id="fis-g0" style="left:192px;top:50px"><div class="halo"></div><div class="floor"></div><div class="burst" id="fis-b0"></div></div><div class="gl" id="fis-g1" style="left:530px;top:50px"><div class="halo"></div><div class="floor"></div><div class="burst" id="fis-b1"></div></div><div class="gl" id="fis-g2" style="left:192px;top:418px"><div class="halo"></div><div class="floor"></div><div class="burst" id="fis-b2"></div></div><div class="gl" id="fis-g3" style="left:530px;top:418px"><div class="halo"></div><div class="floor"></div><div class="burst" id="fis-b3"></div></div><div class="gl" id="fis-g4" style="left:192px;top:786px"><div class="halo"></div><div class="floor"></div><div class="burst" id="fis-b4"></div></div><div class="gl" id="fis-g5" style="left:530px;top:786px"><div class="halo"></div><div class="floor"></div><div class="burst" id="fis-b5"></div></div></div><div class="rays" id="fis-rays" style="left:181px;top:-82px"></div><div><div class="tc" id="fis-c0" style="left:192px;top:50px"><img src="assets/tiles/fis_0.png"><div class="sheen"><i id="fis-s0"></i></div></div><div class="tc" id="fis-c1" style="left:530px;top:50px"><img src="assets/tiles/fis_1.png"><div class="sheen"><i id="fis-s1"></i></div></div><div class="tc" id="fis-c2" style="left:192px;top:418px"><img src="assets/tiles/fis_2.png"><div class="sheen"><i id="fis-s2"></i></div></div><div class="tc" id="fis-c3" style="left:530px;top:418px"><img src="assets/tiles/fis_3.png"><div class="sheen"><i id="fis-s3"></i></div></div><div class="tc" id="fis-c4" style="left:192px;top:786px"><img src="assets/tiles/fis_4.png"><div class="sheen"><i id="fis-s4"></i></div></div><div class="tc" id="fis-c5" style="left:530px;top:786px"><img src="assets/tiles/fis_5.png"><div class="sheen"><i id="fis-s5"></i></div></div></div><div class="top" id="fis-top" style="left:273px;top:8px"><svg viewBox="0 0 30 22"><path d="M2 20 L4 5 L10 12 L15 2 L20 12 L26 5 L28 20 Z" fill="#FFC21A" stroke="#fff3b0" stroke-width="1.5" stroke-linejoin="round"/></svg><b style="font-weight:400">TOP</b></div></div><div class="hd" id="fis-hd" style="font-size:84px"><span class="tt" style="display:inline-block">FRUTAS FÍSICAS</span></div><div class="ul" id="fis-ul"></div><div class="phrase" id="fis-ph"><span class="pw a">LAS</span><span class="pw">TIENES</span><span class="pw">YA</span></div></div>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const D = {"k": "fis", "cat": "fis", "dur": 5.1563, "E": 0.4, "s0": 0.25, "sg": 0.08};
+tl.fromTo("#fis-hd .tt", { x: -520, skewX: 28, opacity: 0 }, { x: 0, skewX: 0, opacity: 1, duration: .38, ease: "expo.out" }, .16);
+  const k = D.k;
+  tl.fromTo("#" + k + "-bm", { rotation: -25 }, { rotation: 30, duration: D.dur, ease: "none" }, 0);
+  tl.fromTo("#" + k + "-r1, #" + k + "-r2", { opacity: 0 }, { opacity: .7, duration: .4 }, .2);
+  tl.fromTo("#" + k + "-ul", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: .3, ease: "power3.out" }, .24);
+  document.querySelectorAll("#" + k + "-ph .pw").forEach((el, i) => tl.fromTo(el, { y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: .24, ease: "power3.out" }, .4 + i * .08));
+  tl.fromTo("#" + k, { scale: 1 }, { scale: 1.03, duration: D.dur, ease: "none" }, 0);
+  for (let i = 0; i < 6; i++) {
+    const c = "#" + k + "-c" + i, g = "#" + k + "-g" + i, t = D.s0 + D.sg * i, end = t + D.E;
+    gsap.set(c, { transformPerspective: 900 });
+    if (D.cat === "perm") tl.fromTo(c, { rotationX: 90, y: 30, opacity: 0 }, { rotationX: 0, y: 0, opacity: 1, duration: D.E, ease: "back.out(1.6)" }, t);
+    else if (D.cat === "fis") { tl.fromTo(c, { y: -64, opacity: 0 }, { y: 0, opacity: 1, duration: D.E + .1, ease: "bounce.out" }, t); tl.fromTo(c, { scale: .55 }, { scale: 1, duration: D.E, ease: "back.out(2)" }, t); }
+    else if (D.cat === "gp") tl.fromTo(c, { x: (i % 2 ? 700 : -700), rotationY: (i % 2 ? -55 : 55), opacity: 0 }, { x: 0, rotationY: 0, opacity: 1, duration: D.E, ease: "back.out(1.3)" }, t);
+    else {
+      tl.fromTo(c, { scale: 1.18, opacity: 0 }, { scale: 1, opacity: 1, duration: D.E, ease: "expo.out" }, t);
+      tl.fromTo("#" + k + "-b" + i, { scale: .3, opacity: .9 }, { scale: 2.2, opacity: 0, duration: .4, ease: "power2.out" }, t);
+    }
+    tl.fromTo(g, { scale: .6, opacity: 0 }, { scale: 1, opacity: 1, duration: D.E, ease: "power2.out" }, t);
+    tl.fromTo("#" + k + "-s" + i, { x: -100, opacity: .9 }, { x: 340, opacity: .9, duration: .45, ease: "power2.inOut" }, end + .1);
+    tl.to(c, { y: -3, duration: .8, yoyo: true, repeat: 4, ease: "sine.inOut" }, end + .2);
+    tl.fromTo(g, { scale: 1 }, { scale: 1.05, duration: 1.1, yoyo: true, repeat: 3, ease: "sine.inOut", immediateRender: false }, end + .1);
+  }
+  const e0 = D.s0 + D.E;
+  tl.fromTo("#" + k + "-top", { scale: 0, opacity: 0, rotation: -15 }, { scale: 1, opacity: 1, rotation: 0, duration: .28, ease: "back.out(2.2)" }, e0 + .05);
+  tl.fromTo("#" + k + "-rays", { opacity: 0 }, { opacity: .55, duration: .3 }, D.s0);
+  tl.fromTo("#" + k + "-rays", { rotation: 0 }, { rotation: 50, duration: D.dur, ease: "none" }, D.s0);
+  const xs = []; for (let i = 0; i < 6; i++) { xs.push("#" + k + "-c" + i); xs.push("#" + k + "-g" + i); }
+  xs.push("#" + k + "-rays"); xs.push("#" + k + "-top");
+  tl.to(xs, { opacity: 0, scale: .96, duration: .12, ease: "power1.in" }, D.dur - .36);   // las tarjetas terminan de salir antes de cualquier transición
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["scene-fis"] = tl;
+})();
+</script>
+</div>
+</template>

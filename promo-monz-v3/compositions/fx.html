@@ -1,0 +1,43 @@
+<template id="fx-template">
+<div data-composition-id="fx" data-width="1080" data-height="1920" data-start="0" data-duration="30.0">
+<div class="sweep" id="fx-s1"></div><div class="sweep silver" id="fx-s2"></div><div class="flash" id="fx-gd" style="background:#FFC21A"></div><div class="sl" id="fx-gl0" style="top:-20px;height:295px;background:#000"></div><div class="sl" id="fx-gl1" style="top:255px;height:295px;background:#FFC21A"></div><div class="sl" id="fx-gl2" style="top:530px;height:295px;background:#fff"></div><div class="sl" id="fx-gl3" style="top:805px;height:295px;background:#00f0ff"></div><div class="sl" id="fx-gl4" style="top:1080px;height:295px;background:#ff2bd6"></div><div class="sl" id="fx-gl5" style="top:1355px;height:295px;background:#FFC21A"></div><div class="sl" id="fx-gl6" style="top:1630px;height:295px;background:#000"></div><div class="slat" id="fx-sl0" style="left:0px;background:#07070a"></div><div class="slat" id="fx-sl1" style="left:135px;background:#FFC21A"></div><div class="slat" id="fx-sl2" style="left:270px;background:#07070a"></div><div class="slat" id="fx-sl3" style="left:405px;background:#FFC21A"></div><div class="slat" id="fx-sl4" style="left:540px;background:#07070a"></div><div class="slat" id="fx-sl5" style="left:675px;background:#FFC21A"></div><div class="slat" id="fx-sl6" style="left:810px;background:#07070a"></div><div class="slat" id="fx-sl7" style="left:945px;background:#FFC21A"></div><div class="curt" id="fx-c1" style="top:0;border-bottom:8px solid #FFC21A"></div><div class="curt" id="fx-c2" style="top:940px;border-top:8px solid #FFC21A"></div><div class="shock" id="fx-shock"></div><div class="flash" id="fx-gf" style="background:#FFC21A;opacity:.94"></div>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const D = {"B": [1.4062, 3.0469, 8.4375, 13.5938, 18.0469, 22.5, 26.4844], "gl": [{"y": -20, "h": 295, "c": "#000", "dx": -1}, {"y": 255, "h": 295, "c": "#FFC21A", "dx": -1}, {"y": 530, "h": 295, "c": "#fff", "dx": -1}, {"y": 805, "h": 295, "c": "#00f0ff", "dx": 1}, {"y": 1080, "h": 295, "c": "#ff2bd6", "dx": -1}, {"y": 1355, "h": 295, "c": "#FFC21A", "dx": 1}, {"y": 1630, "h": 295, "c": "#000", "dx": 1}], "total": 30.0};
+
+  const FT = (s, a, c, t) => tl.fromTo(s, a, { ...c, immediateRender: false }, t);
+  const [b1, b2, b3, b4, b5, b6, b7] = D.B, T = D.total;
+  tl.to("#fx-gf", { opacity: 0, duration: .45, ease: "power2.out" }, 0);                               // destello dorado inicial (gancho)
+  FT("#fx-s1", { x: -300, opacity: 1 }, { x: 1900, opacity: 1, duration: .38, ease: "power2.inOut" }, b1 - .19);
+  tl.set("#fx-s1", { opacity: 0 }, b1 + .22);
+  FT("#fx-gd", { opacity: 0 }, { opacity: .8, duration: .1, ease: "power2.in" }, b2 - .1);
+  tl.to("#fx-gd", { opacity: 0, duration: .22, ease: "power2.out" }, b2);
+  D.gl.forEach((o, i) => {
+    FT("#fx-gl" + i, { x: o.dx * -1200, opacity: 1 }, { x: 0, duration: .12, ease: "power2.out" }, b3 - .18 + i * .012);
+    tl.to("#fx-gl" + i, { x: o.dx * 1200, duration: .13, ease: "power2.in" }, b3 + i * .012);
+    tl.set("#fx-gl" + i, { opacity: 0 }, b3 + .26);
+  });
+  for (let i = 0; i < 8; i++) {
+    FT("#fx-sl" + i, { y: -1950, opacity: 1 }, { y: 0, duration: .13, ease: "power2.out" }, b4 - .16 + i * .012);
+    tl.to("#fx-sl" + i, { y: 1950, duration: .13, ease: "power2.in" }, b4 + i * .012);
+    tl.set("#fx-sl" + i, { opacity: 0 }, b4 + .26);
+  }
+  FT("#fx-shock", { scale: .1, opacity: 1 }, { scale: 7, opacity: 0, duration: .5, ease: "power2.out" }, b5 - .1);
+  FT("#fx-gd", { opacity: 0 }, { opacity: .8, duration: .08 }, b5 - .06);
+  tl.to("#fx-gd", { opacity: 0, duration: .24 }, b5 + .02);
+  FT("#fx-s2", { x: 0, opacity: 1 }, { x: -2100, opacity: 1, duration: .38, ease: "power2.inOut" }, b6 - .19);
+  tl.set("#fx-s2", { opacity: 0 }, b6 + .22);
+  FT("#fx-c1", { y: -985, opacity: 1 }, { y: 0, duration: .14, ease: "power3.out" }, b7 - .16);
+  FT("#fx-c2", { y: 985, opacity: 1 }, { y: 0, duration: .14, ease: "power3.out" }, b7 - .16);
+  tl.to("#fx-c1", { y: -985, duration: .14, ease: "power3.in" }, b7 + .02);
+  tl.to("#fx-c2", { y: 985, duration: .14, ease: "power3.in" }, b7 + .02);
+  tl.set(["#fx-c1", "#fx-c2"], { opacity: 0 }, b7 + .24);
+  FT("#fx-gf", { opacity: 0 }, { opacity: .94, duration: .42, ease: "power2.in" }, T - .45);          // destello dorado final = inicio (bucle)
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["fx"] = tl;
+})();
+</script>
+</div>
+</template>

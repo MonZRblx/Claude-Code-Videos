@@ -1,0 +1,25 @@
+<template id="close-template">
+<div data-composition-id="close" data-width="1080" data-height="1920" data-start="0" data-duration="3.516">
+<div class="scn" id="c"><div class="beam" id="c-bm"></div><div class="hrays" id="c-rays"></div><div class="ct" id="c-t1" style="top:310px;font-size:122px"><span class="ln"><span class="mask"><span class="rv" style="display:inline-block"><span class="wd ">ESCRÍBEME</span></span></span></span><span class="ln"><span class="mask"><span class="rv" style="display:inline-block"><span class="wd ">POR DM EN</span></span></span></span><span class="ln"><span class="mask"><span class="rv" style="display:inline-block"><span class="wd ">TIKTOK</span></span></span></span></div><svg class="arrow" id="c-arrow" viewBox="0 0 180 110"><g fill="none" stroke="#FFC21A" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"><path id="c-a0" d="M30 6 L90 44 L150 6"/><path id="c-a1" d="M30 42 L90 80 L150 42"/><path id="c-a2" d="M30 78 L90 116 L150 78"/></g></svg><div class="neon" id="c-neon">@monzmc05</div><div class="ct" id="c-t2" style="top:1060px;font-size:84px"><span class="ln"><span class="mask"><span class="rv" style="display:inline-block"><span class="wd g">SUBE DE NIVEL</span></span></span></span><span class="ln"><span class="mask"><span class="rv" style="display:inline-block"><span class="wd g">TU INVENTARIO</span></span></span></span></div><div class="phrase c-gold" id="c-ph" style="font-size:56px"><span class="pw">VENTA SOLO EN MÉXICO</span></div></div>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const D = {"dur": 3.5156};
+
+  tl.fromTo("#c-bm", { rotation: -30 }, { rotation: 25, duration: D.dur, ease: "none" }, 0);
+  tl.fromTo("#c-rays", { rotation: 0, opacity: 0 }, { rotation: 40, opacity: .8, duration: D.dur, ease: "none" }, 0);
+  document.querySelectorAll("#c-t1 .rv").forEach((el, i) => tl.fromTo(el, { y: 220, rotation: 5 }, { y: 0, rotation: 0, duration: .4, ease: "expo.out" }, .1 + i * .12));
+  tl.fromTo("#c-arrow", { y: -30, opacity: 0 }, { y: 0, opacity: 1, duration: .25, ease: "power3.out" }, .55);
+  [0, 1, 2].forEach(i => tl.fromTo("#c-a" + i, { opacity: .15, y: -8 }, { opacity: 1, y: 10, duration: .3, yoyo: true, repeat: 7, ease: "sine.inOut" }, .6 + i * .1));
+  [[0, .1], [.07, 0], [.14, .1], [.22, 0], [.3, 1]].forEach(f => tl.set("#c-neon", { opacity: f[1] }, .8 + f[0]));
+  tl.fromTo("#c-neon", { scale: .85 }, { scale: 1, duration: .4, ease: "back.out(2)" }, 1.05);
+  tl.to("#c-neon", { scale: 1.03, duration: .35, yoyo: true, repeat: 4, ease: "sine.inOut" }, 1.5);
+  document.querySelectorAll("#c-t2 .rv").forEach((el, i) => tl.fromTo(el, { y: 200 }, { y: 0, duration: .4, ease: "expo.out" }, 1.35 + i * .16));
+  tl.fromTo("#c-ph .pw", { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: .28 }, 1.8);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["close"] = tl;
+})();
+</script>
+</div>
+</template>

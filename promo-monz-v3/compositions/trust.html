@@ -1,0 +1,33 @@
+<template id="trust-template">
+<div data-composition-id="trust" data-width="1080" data-height="1920" data-start="0" data-duration="3.984">
+<div class="scn c-gold" id="t"><div class="hz-t"></div><div class="hz-b"></div><div class="beam tint" id="t-bm"></div><div class="hd" id="t-hd" style="font-size:96px"><span class="tt" style="display:inline-block">TRADES <span class="g">REALES</span></span></div><div class="ul" id="t-ul"></div><div class="tw" id="t-w0" style="top:514px;height:672px"><img src="assets/trades/kitsune.png"></div><div class="tw" id="t-w1" style="top:519px;height:663px"><img src="assets/trades/portal_yeti.png"></div><div class="tw" id="t-w2" style="top:522px;height:657px"><img src="assets/trades/portal_bran.png"></div><div class="tw" id="t-w3" style="top:518px;height:664px"><img src="assets/trades/dragon.png"></div><div class="tw" id="t-w4" style="top:526px;height:649px"><img src="assets/trades/darkblade.png"></div><svg class="chk" id="t-chk" viewBox="0 0 320 320"><circle id="t-c1" cx="160" cy="160" r="140" fill="rgba(0,0,0,.55)" stroke="#000" stroke-width="30" pathLength="100"/><circle id="t-c2" cx="160" cy="160" r="140" fill="none" stroke="#FFC21A" stroke-width="16" stroke-linecap="round" pathLength="100"/><path id="t-k1" d="M92 170 L142 220 L232 112" fill="none" stroke="#000" stroke-width="44" stroke-linecap="round" stroke-linejoin="round" pathLength="100"/><path id="t-k2" d="M92 170 L142 220 L232 112" fill="none" stroke="#fff" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" pathLength="100"/></svg><div class="seal" id="t-seal"><div class="sh" id="t-sh"></div>100% CONFIABLE</div><div class="cnt" id="t-cnt"><span class="n">+<span id="t-n">0</span></span><span class="l">REFERENCIAS</span></div></div>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const D = {"dur": 3.9844, "w": 0.5, "n": 5};
+
+  const W = D.w, N = D.n, f = W * N;
+  tl.fromTo("#t-bm", { rotation: -20 }, { rotation: 25, duration: D.dur, ease: "none" }, 0);
+  tl.fromTo("#t-hd .tt", { y: -90, opacity: 0, scale: 1.4 }, { y: 0, opacity: 1, scale: 1, duration: .3, ease: "back.out(2)" }, .06);
+  tl.fromTo("#t-ul", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: .25 }, .2);
+  for (let k = 0; k < N; k++) {
+    const t = W * k, id = "#t-w" + k;
+    tl.fromTo(id, { x: 120, opacity: 0, scale: 1 }, { x: 0, opacity: 1, duration: .08, ease: "power3.out" }, t);
+    tl.to(id, { scale: 1.07, duration: W - .06, ease: "none" }, t + .02);
+    tl.to(id, { x: -70, opacity: 0, duration: .06, ease: "power2.in" }, t + W - .06);
+  }
+  ["#t-c1", "#t-c2", "#t-k1", "#t-k2"].forEach(s => gsap.set(s, { strokeDasharray: 100 }));
+  tl.fromTo("#t-chk", { opacity: 0, scale: .6 }, { opacity: 1, scale: 1, duration: .2, ease: "back.out(1.8)" }, f);
+  tl.fromTo(["#t-c1", "#t-c2"], { strokeDashoffset: 100 }, { strokeDashoffset: 0, duration: .3, ease: "power2.out" }, f + .02);
+  tl.fromTo(["#t-k1", "#t-k2"], { strokeDashoffset: 100 }, { strokeDashoffset: 0, duration: .22, ease: "power2.out" }, f + .22);
+  tl.fromTo("#t-seal", { scale: 2.2, opacity: 0 }, { scale: 1, opacity: 1, duration: .24, ease: "power4.in" }, f + .16);
+  tl.fromTo("#t-sh", { x: -140, opacity: .9 }, { x: 900, opacity: .9, duration: .45, ease: "power2.inOut" }, f + .4);
+  tl.fromTo("#t-cnt", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: .25, ease: "back.out(2)" }, f + .2);
+  tl.fromTo("#t-n", { textContent: 0 }, { textContent: 100, snap: { textContent: 1 }, duration: .8, ease: "power2.out" }, f + .3);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["trust"] = tl;
+})();
+</script>
+</div>
+</template>
