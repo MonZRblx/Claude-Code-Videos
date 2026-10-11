@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1080, height=1920">
+<title>Promo MonZ - Tienda</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-start="0" data-duration="44.2">
+  <script src="assets/vendor/gsap.min.js"></script>
+  <div id="mt-bg" class="clip mount m-bg" data-composition-id="bg" data-composition-src="compositions/bg.html" data-start="0" data-duration="44.2" data-track-index="0"></div>
+  <div id="mt-gancho" class="clip mount m-gancho m-scn" data-composition-id="gancho" data-composition-src="compositions/gancho.html" data-start="0.0" data-duration="2.167" data-track-index="1"></div>
+  <div id="mt-presentacion" class="clip mount m-pres m-scn" data-composition-id="presentacion" data-composition-src="compositions/presentacion.html" data-start="2.167" data-duration="2.167" data-track-index="1"></div>
+  <div id="mt-cat-perm" class="clip mount m-cat-perm m-scn" data-composition-id="cat-perm" data-composition-src="compositions/cat-perm.html" data-start="4.333" data-duration="13.0" data-track-index="1"></div>
+  <div id="mt-cat-fis" class="clip mount m-cat-fis m-scn" data-composition-id="cat-fis" data-composition-src="compositions/cat-fis.html" data-start="17.333" data-duration="7.8" data-track-index="1"></div>
+  <div id="mt-cat-gp" class="clip mount m-cat-gp m-scn" data-composition-id="cat-gp" data-composition-src="compositions/cat-gp.html" data-start="25.133" data-duration="5.2" data-track-index="1"></div>
+  <div id="mt-cat-skin" class="clip mount m-cat-skin m-scn" data-composition-id="cat-skin" data-composition-src="compositions/cat-skin.html" data-start="30.333" data-duration="5.2" data-track-index="1"></div>
+  <div id="mt-blk-perm1" class="clip mount m-blk" data-composition-id="blk-perm1" data-composition-src="compositions/blk-perm1.html" data-start="4.333" data-duration="2.6" data-track-index="2"></div>
+  <div id="mt-blk-perm2" class="clip mount m-blk" data-composition-id="blk-perm2" data-composition-src="compositions/blk-perm2.html" data-start="6.933" data-duration="2.6" data-track-index="2"></div>
+  <div id="mt-blk-perm3" class="clip mount m-blk" data-composition-id="blk-perm3" data-composition-src="compositions/blk-perm3.html" data-start="9.533" data-duration="2.6" data-track-index="2"></div>
+  <div id="mt-blk-perm4" class="clip mount m-blk" data-composition-id="blk-perm4" data-composition-src="compositions/blk-perm4.html" data-start="12.133" data-duration="2.6" data-track-index="2"></div>
+  <div id="mt-blk-perm5" class="clip mount m-blk" data-composition-id="blk-perm5" data-composition-src="compositions/blk-perm5.html" data-start="14.733" data-duration="2.6" data-track-index="2"></div>
+  <div id="mt-blk-fis1" class="clip mount m-blk" data-composition-id="blk-fis1" data-composition-src="compositions/blk-fis1.html" data-start="17.333" data-duration="2.6" data-track-index="2"></div>
+  <div id="mt-blk-fis2" class="clip mount m-blk" data-composition-id="blk-fis2" data-composition-src="compositions/blk-fis2.html" data-start="19.933" data-duration="2.6" data-track-index="2"></div>
+  <div id="mt-blk-fis3" class="clip mount m-blk" data-composition-id="blk-fis3" data-composition-src="compositions/blk-fis3.html" data-start="22.533" data-duration="2.6" data-track-index="2"></div>
+  <div id="mt-blk-gp1" class="clip mount m-blk" data-composition-id="blk-gp1" data-composition-src="compositions/blk-gp1.html" data-start="25.133" data-duration="2.6" data-track-index="2"></div>
+  <div id="mt-blk-gp2" class="clip mount m-blk" data-composition-id="blk-gp2" data-composition-src="compositions/blk-gp2.html" data-start="27.733" data-duration="2.6" data-track-index="2"></div>
+  <div id="mt-blk-skin1" class="clip mount m-blk" data-composition-id="blk-skin1" data-composition-src="compositions/blk-skin1.html" data-start="30.333" data-duration="2.6" data-track-index="2"></div>
+  <div id="mt-blk-skin2" class="clip mount m-blk" data-composition-id="blk-skin2" data-composition-src="compositions/blk-skin2.html" data-start="32.933" data-duration="2.6" data-track-index="2"></div>
+  <div id="mt-trades" class="clip mount m-scn" data-composition-id="trades" data-composition-src="compositions/trades.html" data-start="35.533" data-duration="5.2" data-track-index="1"></div>
+  <div id="mt-cierre" class="clip mount m-scn" data-composition-id="cierre" data-composition-src="compositions/cierre.html" data-start="40.733" data-duration="3.467" data-track-index="1"></div>
+  <div id="mt-fx" class="clip mount m-fx" data-composition-id="fx" data-composition-src="compositions/fx.html" data-start="0" data-duration="44.2" data-track-index="3"></div>
+  <div id="mt-hud" class="clip mount m-hud" data-composition-id="hud" data-composition-src="compositions/hud.html" data-start="0" data-duration="44.2" data-track-index="4"></div>
+  <audio id="mix" src="assets/audio.mp3" data-start="0" data-duration="44.2" data-track-index="9" data-volume="1"></audio>
+  <script>
+    const tl = gsap.timeline({ paused: true });
+    tl.to({}, { duration: 44.2 }, 0);
+    window.__timelines = window.__timelines || {};
+    window.__timelines["root"] = tl;
+  </script>
+</div>
+</body>
+</html>

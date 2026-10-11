@@ -1,0 +1,41 @@
+<template id="fx-template">
+<div data-composition-id="fx" data-width="1080" data-height="1920" data-start="0" data-duration="44.2">
+<div class="sweep" id="fx-s1"></div><div class="sweep silver" id="fx-s2"></div><div class="flash" id="fx-gd" style="background:#FFC21A"></div><div class="panel" id="fx-p1" style="background:#FFC21A"></div><div class="panel" id="fx-p2" style="background:#07070a"></div><div class="slat" id="fx-sl0" style="left:0px;background:#07070a"></div><div class="slat" id="fx-sl1" style="left:135px;background:#FFC21A"></div><div class="slat" id="fx-sl2" style="left:270px;background:#07070a"></div><div class="slat" id="fx-sl3" style="left:405px;background:#FFC21A"></div><div class="slat" id="fx-sl4" style="left:540px;background:#07070a"></div><div class="slat" id="fx-sl5" style="left:675px;background:#FFC21A"></div><div class="slat" id="fx-sl6" style="left:810px;background:#07070a"></div><div class="slat" id="fx-sl7" style="left:945px;background:#FFC21A"></div><div class="curt" id="fx-c1" style="top:0;border-bottom:8px solid #FFC21A"></div><div class="curt" id="fx-c2" style="top:940px;border-top:8px solid #FFC21A"></div><div class="shock" id="fx-shock"></div><div class="flash" id="fx-wh" style="background:#fff"></div>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const D = {"B": [2.1666666666672683, 4.3333333333345365, 17.33333333333815, 25.133333333340317, 30.333333333341763, 35.5333333333432, 40.733333333344646]};
+
+  const FT = (s, a, c, t) => tl.fromTo(s, a, { ...c, immediateRender: false }, t);
+  const [b1, b2, b3, b4, b5, b6, b7] = D.B;
+  FT("#fx-s1", { x: -300, opacity: 1 }, { x: 1900, opacity: 1, duration: .56, ease: "power2.inOut" }, b1 - .28);
+  tl.set("#fx-s1", { opacity: 0 }, b1 + .3);
+  FT("#fx-gd", { opacity: 0 }, { opacity: .8, duration: .1, ease: "power2.in" }, b2 - .12);
+  tl.to("#fx-gd", { opacity: 0, duration: .28, ease: "power2.out" }, b2 - .02);
+  FT("#fx-p1", { x: -1100, opacity: 1 }, { x: 0, duration: .2, ease: "power3.out" }, b3 - .22);
+  FT("#fx-p2", { x: -1100, opacity: 1 }, { x: 0, duration: .2, ease: "power3.out" }, b3 - .18);
+  tl.to("#fx-p1", { x: 1100, duration: .2, ease: "power3.in" }, b3);
+  tl.to("#fx-p2", { x: 1100, duration: .2, ease: "power3.in" }, b3 + .04);
+  tl.set(["#fx-p1", "#fx-p2"], { opacity: 0 }, b3 + .3);
+  for (let i = 0; i < 8; i++) {
+    FT("#fx-sl" + i, { y: -1950, opacity: 1 }, { y: 0, duration: .16, ease: "power2.out" }, b4 - .2 + i * .015);
+    tl.to("#fx-sl" + i, { y: 1950, duration: .16, ease: "power2.in" }, b4 + i * .015);
+    tl.set("#fx-sl" + i, { opacity: 0 }, b4 + .3);
+  }
+  FT("#fx-s2", { x: 0, opacity: 1 }, { x: -2100, opacity: 1, duration: .56, ease: "power2.inOut" }, b5 - .28);
+  tl.set("#fx-s2", { opacity: 0 }, b5 + .3);
+  FT("#fx-c1", { y: -985, opacity: 1 }, { y: 0, duration: .17, ease: "power3.out" }, b6 - .19);
+  FT("#fx-c2", { y: 985, opacity: 1 }, { y: 0, duration: .17, ease: "power3.out" }, b6 - .19);
+  tl.to("#fx-c1", { y: -985, duration: .17, ease: "power3.in" }, b6 + .02);
+  tl.to("#fx-c2", { y: 985, duration: .17, ease: "power3.in" }, b6 + .02);
+  tl.set(["#fx-c1", "#fx-c2"], { opacity: 0 }, b6 + .3);
+  FT("#fx-shock", { scale: .1, opacity: 1 }, { scale: 7, opacity: 0, duration: .75, ease: "power2.out" }, b7 - .08);
+  FT("#fx-gd", { opacity: 0 }, { opacity: .85, duration: .08 }, b7 - .06);
+  tl.to("#fx-gd", { opacity: 0, duration: .3 }, b7 + .02);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["fx"] = tl;
+})();
+</script>
+</div>
+</template>

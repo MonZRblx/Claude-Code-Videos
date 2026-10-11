@@ -1,0 +1,977 @@
+[
+ {
+  "cat": "perm",
+  "file": "perm_00.png",
+  "name": "Dragón Permanente",
+  "price": 625,
+  "size": [
+   253,
+   250
+  ],
+  "src": 14,
+  "box": [
+   11,
+   11
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_01.png",
+  "name": "Control Permanente",
+  "price": 500,
+  "size": [
+   252,
+   185
+  ],
+  "src": 14,
+  "box": [
+   109,
+   11
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_02.png",
+  "name": "Kitsune Permanente",
+  "price": 500,
+  "size": [
+   269,
+   255
+  ],
+  "src": 14,
+  "box": [
+   207,
+   11
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_03.png",
+  "name": "Magnet Permanente",
+  "price": 440,
+  "size": [
+   256,
+   251
+  ],
+  "src": 14,
+  "box": [
+   305,
+   11
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_04.png",
+  "name": "Yeti Permanente",
+  "price": 375,
+  "size": [
+   230,
+   244
+  ],
+  "src": 14,
+  "box": [
+   11,
+   128
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_05.png",
+  "name": "Tiger Permanente",
+  "price": 375,
+  "size": [
+   212,
+   228
+  ],
+  "src": 14,
+  "box": [
+   109,
+   128
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_06.png",
+  "name": "Spirit Permanente",
+  "price": 320,
+  "size": [
+   240,
+   255
+  ],
+  "src": 14,
+  "box": [
+   207,
+   128
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_07.png",
+  "name": "Gas Permanente",
+  "price": 315,
+  "size": [
+   266,
+   259
+  ],
+  "src": 14,
+  "box": [
+   305,
+   128
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_08.png",
+  "name": "Venom Permanente",
+  "price": 310,
+  "size": [
+   265,
+   253
+  ],
+  "src": 15,
+  "box": [
+   8,
+   5
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_09.png",
+  "name": "Shadow Permanente",
+  "price": 305,
+  "size": [
+   253,
+   254
+  ],
+  "src": 15,
+  "box": [
+   106,
+   5
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_10.png",
+  "name": "Dough Permanente",
+  "price": 300,
+  "size": [
+   256,
+   238
+  ],
+  "src": 15,
+  "box": [
+   204,
+   5
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_11.png",
+  "name": "T-Rex Permanente",
+  "price": 295,
+  "size": [
+   166,
+   244
+  ],
+  "src": 15,
+  "box": [
+   302,
+   5
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_12.png",
+  "name": "Mammoth Permanente",
+  "price": 295,
+  "size": [
+   204,
+   249
+  ],
+  "src": 15,
+  "box": [
+   8,
+   123
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_13.png",
+  "name": "Gravity Permanente",
+  "price": 290,
+  "size": [
+   241,
+   237
+  ],
+  "src": 15,
+  "box": [
+   106,
+   123
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_14.png",
+  "name": "Blizzard Permanente",
+  "price": 285,
+  "size": [
+   226,
+   212
+  ],
+  "src": 15,
+  "box": [
+   204,
+   123
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_15.png",
+  "name": "Pain Permanente",
+  "price": 275,
+  "size": [
+   261,
+   257
+  ],
+  "src": 15,
+  "box": [
+   302,
+   123
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_16.png",
+  "name": "Lightning Permanente",
+  "price": 265,
+  "size": [
+   236,
+   242
+  ],
+  "src": 16,
+  "box": [
+   7,
+   7
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_17.png",
+  "name": "Portal Permanente",
+  "price": 250,
+  "size": [
+   256,
+   255
+  ],
+  "src": 16,
+  "box": [
+   105,
+   7
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_18.png",
+  "name": "Phoenix Permanente",
+  "price": 250,
+  "size": [
+   228,
+   206
+  ],
+  "src": 16,
+  "box": [
+   203,
+   7
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_19.png",
+  "name": "Sound Permanente",
+  "price": 240,
+  "size": [
+   250,
+   220
+  ],
+  "src": 16,
+  "box": [
+   301,
+   7
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_20.png",
+  "name": "Spider Permanente",
+  "price": 225,
+  "size": [
+   256,
+   257
+  ],
+  "src": 16,
+  "box": [
+   7,
+   124
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_21.png",
+  "name": "Creation Permanente",
+  "price": 220,
+  "size": [
+   260,
+   228
+  ],
+  "src": 16,
+  "box": [
+   105,
+   124
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_22.png",
+  "name": "Love Permanente",
+  "price": 215,
+  "size": [
+   242,
+   238
+  ],
+  "src": 16,
+  "box": [
+   203,
+   124
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_23.png",
+  "name": "Buddha Permanente",
+  "price": 210,
+  "size": [
+   183,
+   232
+  ],
+  "src": 16,
+  "box": [
+   301,
+   124
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_24.png",
+  "name": "Quake Permanente",
+  "price": 190,
+  "size": [
+   232,
+   212
+  ],
+  "src": 17,
+  "box": [
+   8,
+   7
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_25.png",
+  "name": "Magma Permanente",
+  "price": 165,
+  "size": [
+   224,
+   214
+  ],
+  "src": 17,
+  "box": [
+   106,
+   7
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_26.png",
+  "name": "Ghost Permanente",
+  "price": 160,
+  "size": [
+   265,
+   255
+  ],
+  "src": 17,
+  "box": [
+   204,
+   7
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_27.png",
+  "name": "Rubber Permanente",
+  "price": 150,
+  "size": [
+   204,
+   218
+  ],
+  "src": 17,
+  "box": [
+   302,
+   7
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_28.png",
+  "name": "Light Permanente",
+  "price": 140,
+  "size": [
+   204,
+   196
+  ],
+  "src": 17,
+  "box": [
+   8,
+   124
+  ]
+ },
+ {
+  "cat": "perm",
+  "file": "perm_29.png",
+  "name": "Diamond Permanente",
+  "price": 125,
+  "size": [
+   219,
+   199
+  ],
+  "src": 17,
+  "box": [
+   106,
+   124
+  ]
+ },
+ {
+  "cat": "fis",
+  "file": "fis_00.png",
+  "name": "Dragón West",
+  "price": 360,
+  "size": [
+   238,
+   228
+  ],
+  "src": 18,
+  "box": [
+   12,
+   19
+  ]
+ },
+ {
+  "cat": "fis",
+  "file": "fis_01.png",
+  "name": "Dragón East",
+  "price": 320,
+  "size": [
+   251,
+   207
+  ],
+  "src": 18,
+  "box": [
+   110,
+   19
+  ]
+ },
+ {
+  "cat": "fis",
+  "file": "fis_02.png",
+  "name": "Magnet",
+  "price": 140,
+  "size": [
+   237,
+   228
+  ],
+  "src": 18,
+  "box": [
+   208,
+   19
+  ]
+ },
+ {
+  "cat": "fis",
+  "file": "fis_03.png",
+  "name": "Kitsune",
+  "price": 100,
+  "size": [
+   249,
+   216
+  ],
+  "src": 18,
+  "box": [
+   306,
+   19
+  ]
+ },
+ {
+  "cat": "fis",
+  "file": "fis_04.png",
+  "name": "Control",
+  "price": 55,
+  "size": [
+   245,
+   221
+  ],
+  "src": 18,
+  "box": [
+   12,
+   136
+  ]
+ },
+ {
+  "cat": "fis",
+  "file": "fis_05.png",
+  "name": "Yeti",
+  "price": 50,
+  "size": [
+   251,
+   222
+  ],
+  "src": 18,
+  "box": [
+   110,
+   136
+  ]
+ },
+ {
+  "cat": "fis",
+  "file": "fis_06.png",
+  "name": "Tiger",
+  "price": 50,
+  "size": [
+   259,
+   257
+  ],
+  "src": 18,
+  "box": [
+   208,
+   136
+  ]
+ },
+ {
+  "cat": "fis",
+  "file": "fis_07.png",
+  "name": "Gas",
+  "price": 40,
+  "size": [
+   249,
+   229
+  ],
+  "src": 18,
+  "box": [
+   306,
+   136
+  ]
+ },
+ {
+  "cat": "fis",
+  "file": "fis_08.png",
+  "name": "Dough",
+  "price": 35,
+  "size": [
+   210,
+   251
+  ],
+  "src": 19,
+  "box": [
+   20,
+   15
+  ]
+ },
+ {
+  "cat": "fis",
+  "file": "fis_09.png",
+  "name": "T-Rex",
+  "price": 25,
+  "size": [
+   245,
+   228
+  ],
+  "src": 19,
+  "box": [
+   118,
+   15
+  ]
+ },
+ {
+  "cat": "fis",
+  "file": "fis_10.png",
+  "name": "Venom",
+  "price": 20,
+  "size": [
+   239,
+   244
+  ],
+  "src": 19,
+  "box": [
+   216,
+   15
+  ]
+ },
+ {
+  "cat": "fis",
+  "file": "fis_11.png",
+  "name": "Mammoth",
+  "price": 20,
+  "size": [
+   242,
+   242
+  ],
+  "src": 19,
+  "box": [
+   314,
+   15
+  ]
+ },
+ {
+  "cat": "fis",
+  "file": "fis_12.png",
+  "name": "Spirit",
+  "price": 20,
+  "size": [
+   217,
+   230
+  ],
+  "src": 19,
+  "box": [
+   20,
+   132
+  ]
+ },
+ {
+  "cat": "fis",
+  "file": "fis_13.png",
+  "name": "Gravity",
+  "price": 20,
+  "size": [
+   250,
+   217
+  ],
+  "src": 19,
+  "box": [
+   118,
+   132
+  ]
+ },
+ {
+  "cat": "fis",
+  "file": "fis_14.png",
+  "name": "Portal",
+  "price": 20,
+  "size": [
+   249,
+   233
+  ],
+  "src": 19,
+  "box": [
+   216,
+   132
+  ]
+ },
+ {
+  "cat": "fis",
+  "file": "fis_15.png",
+  "name": "Buddha",
+  "price": 20,
+  "size": [
+   234,
+   238
+  ],
+  "src": 19,
+  "box": [
+   314,
+   132
+  ]
+ },
+ {
+  "cat": "gp",
+  "file": "gp_00.png",
+  "name": "Fruit Notifier",
+  "price": 340,
+  "size": [
+   266,
+   255
+  ],
+  "src": 20,
+  "box": [
+   9,
+   7
+  ]
+ },
+ {
+  "cat": "gp",
+  "file": "gp_01.png",
+  "name": "Dark Blade",
+  "price": 150,
+  "size": [
+   266,
+   255
+  ],
+  "src": 20,
+  "box": [
+   107,
+   7
+  ]
+ },
+ {
+  "cat": "gp",
+  "file": "gp_02.png",
+  "name": "2x Mastery",
+  "price": 60,
+  "size": [
+   266,
+   255
+  ],
+  "src": 20,
+  "box": [
+   205,
+   7
+  ]
+ },
+ {
+  "cat": "gp",
+  "file": "gp_03.png",
+  "name": "2x Money",
+  "price": 60,
+  "size": [
+   266,
+   255
+  ],
+  "src": 20,
+  "box": [
+   303,
+   7
+  ]
+ },
+ {
+  "cat": "gp",
+  "file": "gp_04.png",
+  "name": "+1 Fruit Storage",
+  "price": 50,
+  "size": [
+   254,
+   258
+  ],
+  "src": 20,
+  "box": [
+   9,
+   124
+  ]
+ },
+ {
+  "cat": "gp",
+  "file": "gp_05.png",
+  "name": "Fast Boats",
+  "price": 45,
+  "size": [
+   266,
+   259
+  ],
+  "src": 20,
+  "box": [
+   107,
+   124
+  ]
+ },
+ {
+  "cat": "gp",
+  "file": "gp_06.png",
+  "name": "2x Boss Drops",
+  "price": 45,
+  "size": [
+   269,
+   259
+  ],
+  "src": 20,
+  "box": [
+   205,
+   124
+  ]
+ },
+ {
+  "cat": "skin",
+  "file": "skin_00.png",
+  "name": "Galaxy Empyrean Kitsune",
+  "price": 950,
+  "size": [
+   253,
+   232
+  ],
+  "src": 21,
+  "box": [
+   13,
+   9
+  ]
+ },
+ {
+  "cat": "skin",
+  "file": "skin_01.png",
+  "name": "Ember Dragon",
+  "price": 650,
+  "size": [
+   244,
+   229
+  ],
+  "src": 21,
+  "box": [
+   111,
+   9
+  ]
+ },
+ {
+  "cat": "skin",
+  "file": "skin_02.png",
+  "name": "Purple Lightbning",
+  "price": 550,
+  "size": [
+   216,
+   216
+  ],
+  "src": 21,
+  "box": [
+   209,
+   9
+  ]
+ },
+ {
+  "cat": "skin",
+  "file": "skin_03.png",
+  "name": "Arcsteel Magnet",
+  "price": 350,
+  "size": [
+   218,
+   216
+  ],
+  "src": 21,
+  "box": [
+   307,
+   9
+  ]
+ },
+ {
+  "cat": "skin",
+  "file": "skin_04.png",
+  "name": "Super Spirit Pain",
+  "price": 340,
+  "size": [
+   241,
+   234
+  ],
+  "src": 21,
+  "box": [
+   13,
+   126
+  ]
+ },
+ {
+  "cat": "skin",
+  "file": "skin_05.png",
+  "name": "Red Lightning",
+  "price": 285,
+  "size": [
+   236,
+   234
+  ],
+  "src": 21,
+  "box": [
+   111,
+   126
+  ]
+ },
+ {
+  "cat": "skin",
+  "file": "skin_06.png",
+  "name": "Runic Fiend Yeti",
+  "price": 250,
+  "size": [
+   242,
+   237
+  ],
+  "src": 21,
+  "box": [
+   209,
+   126
+  ]
+ },
+ {
+  "cat": "skin",
+  "file": "skin_07.png",
+  "name": "Divine Portal",
+  "price": 240,
+  "size": [
+   242,
+   225
+  ],
+  "src": 21,
+  "box": [
+   307,
+   126
+  ]
+ },
+ {
+  "cat": "skin",
+  "file": "skin_08.png",
+  "name": "Dog Blade",
+  "price": 210,
+  "size": [
+   164,
+   220
+  ],
+  "src": 22,
+  "box": [
+   10,
+   20
+  ]
+ },
+ {
+  "cat": "skin",
+  "file": "skin_09.png",
+  "name": "Werewolf",
+  "price": 180,
+  "size": [
+   246,
+   241
+  ],
+  "src": 22,
+  "box": [
+   108,
+   20
+  ]
+ },
+ {
+  "cat": "skin",
+  "file": "skin_10.png",
+  "name": "Fiend Yeti",
+  "price": 180,
+  "size": [
+   242,
+   224
+  ],
+  "src": 22,
+  "box": [
+   206,
+   20
+  ]
+ },
+ {
+  "cat": "skin",
+  "file": "skin_11.png",
+  "name": "Torment Pain",
+  "price": 30,
+  "size": [
+   225,
+   221
+  ],
+  "src": 22,
+  "box": [
+   304,
+   20
+  ]
+ }
+]

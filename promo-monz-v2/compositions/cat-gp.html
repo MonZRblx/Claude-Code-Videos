@@ -1,0 +1,20 @@
+<template id="cat-gp-template">
+<div data-composition-id="cat-gp" data-width="1080" data-height="1920" data-start="0" data-duration="5.2">
+<div class="scn c-gp" id="gp-f"><div class="hz-t"></div><div class="hz-b"></div><div class="beam tint" id="gp-bm"></div><div class="hd c-gp" id="gp-hd" style="font-size:104px"><span class="tt" style="display:inline-block">GAMEPASSES</span></div><div class="ul" id="gp-ul"></div><div class="phrase c-gp" id="gp-ph"><span class="pw a">POTENCIA</span><span class="pw">TU</span><span class="pw">CUENTA</span></div></div>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const D = {"k": "gp", "dur": 5.200000000001445};
+tl.fromTo("#gp-hd .tt", { scale: 1.5, opacity: 0 }, { scale: 1, opacity: 1, duration: .45, ease: "expo.out" }, .22);
+  const k = D.k;
+  tl.fromTo("#" + k + "-bm", { rotation: -25 }, { rotation: 30, duration: D.dur, ease: "none" }, 0);
+  tl.fromTo("#" + k + "-ul", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: .4, ease: "power3.out" }, .35);
+  document.querySelectorAll("#" + k + "-ph .pw").forEach((el, i) => tl.fromTo(el, { y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: .28, ease: "power3.out" }, .5 + i * .1));
+  tl.fromTo("#" + k + "-f", { scale: 1 }, { scale: 1.035, duration: D.dur, ease: "none" }, 0);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["cat-gp"] = tl;
+})();
+</script>
+</div>
+</template>

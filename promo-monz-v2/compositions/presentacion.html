@@ -1,0 +1,25 @@
+<template id="presentacion-template">
+<div data-composition-id="presentacion" data-width="1080" data-height="1920" data-start="0" data-duration="2.167">
+<div class="scn" id="p"><div class="beam" id="p-beam"></div><div class="mz" id="p-t1" style="top:380px"><span class="mask"><span class="rv" style="display:inline-block"><span class="gtw"><span class="o">MONZ</span><span class="f ">MONZ</span></span></span></span></div><div class="mz" id="p-t2" style="top:560px;font-size:150px"><span class="mask"><span class="rv" style="display:inline-block"><span class="gtw"><span class="o">STORE</span><span class="f wh">STORE</span></span></span></span></div><div class="mini c-perm" id="p-m0" style="left:40px;top:860px"><div class="d" id="p-d0"></div><img src="assets/pieces/perm_00.png"><div class="lb">PERMANENTES</div></div><div class="mini c-fis" id="p-m1" style="left:265px;top:860px"><div class="d" id="p-d1"></div><img src="assets/pieces/fis_00.png"><div class="lb">FÍSICAS</div></div><div class="mini c-gp" id="p-m2" style="left:490px;top:860px"><div class="d" id="p-d2"></div><img src="assets/pieces/gp_00.png"><div class="lb">GAMEPASSES</div></div><div class="mini c-skin" id="p-m3" style="left:715px;top:860px"><div class="d" id="p-d3"></div><img src="assets/pieces/skin_00.png"><div class="lb">SKINS</div></div><div class="phrase c-perm" id="p-ph"><span class="pw">TODO</span><span class="pw">PARA</span><span class="pw">TU</span><span class="pw a">INVENTARIO</span></div></div>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const D = {"dur": 2.1666666666672683};
+
+  tl.fromTo("#p-beam", { rotation: -25 }, { rotation: 25, duration: D.dur, ease: "none" }, 0);
+  document.querySelectorAll("#p-t1 .rv, #p-t2 .rv").forEach((el, i) => tl.fromTo(el, { y: 240 }, { y: 0, duration: .5, ease: "expo.out" }, .12 + i * .15));
+  document.querySelectorAll("#p-t1 .f, #p-t2 .f").forEach((el, i) => tl.fromTo(el, { backgroundPosition: "160% 0, 0 0" }, { backgroundPosition: "-60% 0, 0 0", duration: .9, ease: "power2.inOut" }, .5 + i * .18));
+  [0, 1, 2, 3].forEach(i => {
+    tl.fromTo("#p-m" + i, { y: 90, scale: .5, opacity: 0, rotationY: 90 }, { y: 0, scale: 1, opacity: 1, rotationY: 0, duration: .4, ease: "back.out(1.6)" }, .8 + i * .1);
+    tl.to("#p-m" + i + " img", { y: -5, duration: .7, yoyo: true, repeat: 3, ease: "sine.inOut" }, 1.25 + i * .1);
+  });
+  document.querySelectorAll("#p-ph .pw").forEach((el, i) => tl.fromTo(el, { y: 30, opacity: 0 }, { y: 0, opacity: 1, duration: .25, ease: "power3.out" }, .95 + i * .1));
+  tl.to(["#p-t1", "#p-t2"], { scale: 7, opacity: 0, duration: .4, ease: "power3.in" }, D.dur - .4);
+  tl.to(["#p-m0", "#p-m1", "#p-m2", "#p-m3", "#p-ph"], { opacity: 0, scale: .9, duration: .22, ease: "power2.in" }, D.dur - .36);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["presentacion"] = tl;
+})();
+</script>
+</div>
+</template>

@@ -1,0 +1,33 @@
+<template id="trades-template">
+<div data-composition-id="trades" data-width="1080" data-height="1920" data-start="0" data-duration="5.2">
+<div class="scn c-perm" id="t"><div class="hz-t"></div><div class="hz-b"></div><div class="beam tint" id="t-bm"></div><div class="hd" id="t-hd" style="font-size:78px"><span class="tt" style="display:inline-block">TRADES <span class="g">REALES</span> ✅</span></div><div class="ul" id="t-ul"></div><div class="tw" id="t-w0" style="top:506px;height:688px"><img src="assets/trades/kitsune.png"></div><div class="tw" id="t-w1" style="top:511px;height:679px"><img src="assets/trades/portal_yeti.png"></div><div class="tw" id="t-w2" style="top:514px;height:673px"><img src="assets/trades/portal_bran.png"></div><div class="tw" id="t-w3" style="top:510px;height:680px"><img src="assets/trades/dragon.png"></div><div class="tw" id="t-w4" style="top:518px;height:664px"><img src="assets/trades/darkblade.png"></div><div class="dots" id="t-dots"><i></i><i></i><i></i><i></i><i></i></div><div class="seal" id="t-seal"><div class="sh" id="t-sh"></div>✅ 100% CONFIABLE</div><div class="cnt" id="t-cnt"><span class="n">+<span id="t-n">0</span></span><span class="l">REFERENCIAS</span></div></div>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const D = {"dur": 5.200000000001444, "n": 5, "w": 0.8};
+
+  tl.fromTo("#t-bm", { rotation: -20 }, { rotation: 25, duration: D.dur, ease: "none" }, 0);
+  tl.fromTo("#t-hd .tt", { y: -90, opacity: 0, scale: 1.4 }, { y: 0, opacity: 1, scale: 1, duration: .4, ease: "back.out(2)" }, .08);
+  tl.fromTo("#t-ul", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: .35 }, .3);
+  tl.fromTo("#t-dots", { opacity: 0 }, { opacity: 1, duration: .2 }, .1);
+  for (let k = 0; k < D.n; k++) {
+    const t = D.w * k, id = "#t-w" + k;
+    tl.fromTo(id, { x: 140, opacity: 0, scale: 1, rotationY: -12 }, { x: 0, opacity: 1, rotationY: 0, duration: .16, ease: "power3.out" }, t);
+    tl.to(id, { scale: 1.06, duration: D.w - .08, ease: "none" }, t + .08);
+    tl.to(id, { x: -90, opacity: 0, duration: .1, ease: "power2.in" }, t + D.w - .12);
+    document.querySelectorAll("#t-dots i").forEach((d, j) => tl.set(d, { className: j === k ? "on" : "" }, t));
+  }
+  const f = D.w * D.n;
+  tl.to("#t-dots", { opacity: 0, duration: .15 }, f - .05);
+  tl.fromTo("#t-seal", { scale: 2.6, rotation: -10, opacity: 0 }, { scale: 1, rotation: 0, opacity: 1, duration: .32, ease: "power4.in" }, f + .02);
+  tl.to("#t-seal", { y: 4, duration: .05, yoyo: true, repeat: 1 }, f + .34);
+  tl.fromTo("#t-sh", { x: -140, opacity: .9 }, { x: 900, opacity: .9, duration: .6, ease: "power2.inOut" }, f + .42);
+  tl.fromTo("#t-cnt", { y: 70, opacity: 0 }, { y: 0, opacity: 1, duration: .3, ease: "back.out(2)" }, f + .22);
+  tl.fromTo("#t-n", { textContent: 0 }, { textContent: 100, snap: { textContent: 1 }, duration: .8, ease: "power2.out" }, f + .3);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["trades"] = tl;
+})();
+</script>
+</div>
+</template>

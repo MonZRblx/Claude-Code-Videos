@@ -1,0 +1,20 @@
+<template id="bg-template">
+<div data-composition-id="bg" data-width="1080" data-height="1920" data-start="0" data-duration="44.2">
+<div class="fill" id="bg-w"><div class="carbon" id="bg-c"></div><div class="haze"></div><div class="beam" id="bg-b1"></div><div class="beam b2" id="bg-b2"></div></div><i class="sp" id="bgs0" style="left:827px;width:10px;height:10px"></i><i class="sp" id="bgs1" style="left:857px;width:6px;height:6px"></i><i class="sp" id="bgs2" style="left:770px;width:10px;height:10px"></i><i class="sp" id="bgs3" style="left:927px;width:6px;height:6px"></i><i class="sp" id="bgs4" style="left:370px;width:6px;height:6px"></i><i class="sp" id="bgs5" style="left:243px;width:8px;height:8px"></i><i class="sp" id="bgs6" style="left:946px;width:8px;height:8px"></i><i class="sp" id="bgs7" style="left:1049px;width:10px;height:10px"></i><i class="sp" id="bgs8" style="left:513px;width:10px;height:10px"></i><i class="sp" id="bgs9" style="left:221px;width:14px;height:14px"></i><i class="sp" id="bgs10" style="left:605px;width:10px;height:10px"></i><i class="sp" id="bgs11" style="left:886px;width:6px;height:6px"></i><i class="sp" id="bgs12" style="left:426px;width:6px;height:6px"></i><i class="sp" id="bgs13" style="left:1050px;width:10px;height:10px"></i><i class="sp" id="bgs14" style="left:303px;width:10px;height:10px"></i><i class="sp" id="bgs15" style="left:564px;width:10px;height:10px"></i><i class="sp" id="bgs16" style="left:639px;width:6px;height:6px"></i><i class="sp" id="bgs17" style="left:627px;width:10px;height:10px"></i><i class="sp" id="bgs18" style="left:160px;width:8px;height:8px"></i><i class="sp" id="bgs19" style="left:633px;width:8px;height:8px"></i><i class="sp" id="bgs20" style="left:330px;width:14px;height:14px"></i><i class="sp" id="bgs21" style="left:165px;width:6px;height:6px"></i><i class="sp" id="bgs22" style="left:65px;width:14px;height:14px"></i><i class="sp" id="bgs23" style="left:704px;width:8px;height:8px"></i><i class="sp" id="bgs24" style="left:933px;width:10px;height:10px"></i><i class="sp" id="bgs25" style="left:298px;width:14px;height:14px"></i><i class="sp" id="bgs26" style="left:67px;width:6px;height:6px"></i><i class="sp" id="bgs27" style="left:684px;width:14px;height:14px"></i><i class="sp" id="bgs28" style="left:267px;width:8px;height:8px"></i><i class="sp" id="bgs29" style="left:847px;width:8px;height:8px"></i>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const D = {"total": 44.2, "dust": [{"d": 12.36, "dl": 5.19}, {"d": 13.57, "dl": 6.6}, {"d": 13.18, "dl": 6.46}, {"d": 8.2, "dl": 3.26}, {"d": 14.6, "dl": 4.54}, {"d": 14.31, "dl": 0.79}, {"d": 11.28, "dl": 1.73}, {"d": 11.81, "dl": 4.02}, {"d": 8.09, "dl": 1.52}, {"d": 9.96, "dl": 6.41}, {"d": 13.36, "dl": 1.12}, {"d": 13.58, "dl": 0.97}, {"d": 12.32, "dl": 0.89}, {"d": 8.01, "dl": 6.1}, {"d": 9.47, "dl": 1.51}, {"d": 14.88, "dl": 6.11}, {"d": 10.03, "dl": 6.73}, {"d": 11.77, "dl": 4.74}, {"d": 9.43, "dl": 6.59}, {"d": 12.83, "dl": 6.77}, {"d": 14.26, "dl": 2.09}, {"d": 10.53, "dl": 1.16}, {"d": 9.02, "dl": 0.46}, {"d": 10.11, "dl": 4.22}, {"d": 8.02, "dl": 4.75}, {"d": 10.37, "dl": 2.17}, {"d": 13.73, "dl": 3.37}, {"d": 10.21, "dl": 3.37}, {"d": 12.93, "dl": 0.4}, {"d": 14.83, "dl": 0.16}]};
+
+  tl.fromTo("#bg-w", { scale: 1 }, { scale: 1.08, duration: D.total, ease: "none" }, 0);
+  tl.fromTo("#bg-c", { x: 0, y: 0 }, { x: -110, y: -150, duration: D.total, ease: "none" }, 0);
+  tl.fromTo("#bg-b1", { rotation: -30 }, { rotation: 30, duration: D.total, ease: "none" }, 0);
+  tl.fromTo("#bg-b2", { rotation: 35 }, { rotation: -25, duration: D.total, ease: "none" }, 0);
+  D.dust.forEach((o, i) => tl.fromTo("#bgs" + i, { y: 2000, opacity: 0, scale: .6 }, { y: -120, opacity: .9, scale: 1.1, duration: o.d, repeat: Math.ceil(D.total / o.d), ease: "none" }, o.dl));
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["bg"] = tl;
+})();
+</script>
+</div>
+</template>

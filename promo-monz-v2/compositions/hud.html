@@ -1,0 +1,21 @@
+<template id="hud-template">
+<div data-composition-id="hud" data-width="1080" data-height="1920" data-start="0" data-duration="44.2">
+<div class="hud-flag" id="hud-fl" style="left:28px">🇲🇽</div><div class="hud-flag" id="hud-fr" style="right:28px">🇲🇽</div><div class="hud-handle" id="hud-hd">@monzmc05</div><div class="hud-tag" id="hud-tg">SOLO <b>MÉXICO</b> 🇲🇽</div>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const D = {"total": 44.2};
+
+  tl.fromTo("#hud-fl", { y: -120, opacity: 0 }, { y: 0, opacity: 1, duration: .5, ease: "back.out(2)" }, .15);
+  tl.fromTo("#hud-fr", { y: -120, opacity: 0 }, { y: 0, opacity: 1, duration: .5, ease: "back.out(2)" }, .22);
+  tl.fromTo("#hud-hd", { x: -200, opacity: 0 }, { x: 0, opacity: 1, duration: .45, ease: "power3.out" }, .3);
+  tl.fromTo("#hud-tg", { y: -60, opacity: 0 }, { y: 0, opacity: 1, duration: .45, ease: "power3.out" }, .36);
+  tl.to("#hud-fl", { rotation: 4, duration: 1, yoyo: true, repeat: Math.ceil(D.total), ease: "sine.inOut" }, .8);
+  tl.to("#hud-fr", { rotation: -4, duration: 1, yoyo: true, repeat: Math.ceil(D.total), ease: "sine.inOut" }, 1);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["hud"] = tl;
+})();
+</script>
+</div>
+</template>

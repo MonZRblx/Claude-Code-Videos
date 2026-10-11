@@ -1,0 +1,20 @@
+<template id="cat-perm-template">
+<div data-composition-id="cat-perm" data-width="1080" data-height="1920" data-start="0" data-duration="13.0">
+<div class="scn c-perm" id="perm-f"><div class="hz-t"></div><div class="hz-b"></div><div class="beam tint" id="perm-bm"></div><div class="hd c-perm" id="perm-hd" style="font-size:68px"><span class="lt">F</span><span class="lt">R</span><span class="lt">U</span><span class="lt">T</span><span class="lt">A</span><span class="lt">S</span><span class="lt">&nbsp;</span><span class="lt">P</span><span class="lt">E</span><span class="lt">R</span><span class="lt">M</span><span class="lt">A</span><span class="lt">N</span><span class="lt">E</span><span class="lt">N</span><span class="lt">T</span><span class="lt">E</span><span class="lt">S</span></div><div class="ul" id="perm-ul"></div><div class="phrase c-perm" id="perm-ph"><span class="pw a">PERMANENTES</span><span class="pw">AL</span><span class="pw">MEJOR</span><span class="pw">PRECIO</span></div></div>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const D = {"k": "perm", "dur": 13.000000000003613};
+document.querySelectorAll("#perm-hd .lt").forEach((el, i) => tl.fromTo(el, { y: -120, opacity: 0, rotationX: 80 }, { y: 0, opacity: 1, rotationX: 0, duration: .35, ease: "back.out(2)" }, .22 + i * .03));
+  const k = D.k;
+  tl.fromTo("#" + k + "-bm", { rotation: -25 }, { rotation: 30, duration: D.dur, ease: "none" }, 0);
+  tl.fromTo("#" + k + "-ul", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: .4, ease: "power3.out" }, .35);
+  document.querySelectorAll("#" + k + "-ph .pw").forEach((el, i) => tl.fromTo(el, { y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: .28, ease: "power3.out" }, .5 + i * .1));
+  tl.fromTo("#" + k + "-f", { scale: 1 }, { scale: 1.035, duration: D.dur, ease: "none" }, 0);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["cat-perm"] = tl;
+})();
+</script>
+</div>
+</template>

@@ -1,0 +1,20 @@
+<template id="cat-fis-template">
+<div data-composition-id="cat-fis" data-width="1080" data-height="1920" data-start="0" data-duration="7.8">
+<div class="scn c-fis" id="fis-f"><div class="hz-t"></div><div class="hz-b"></div><div class="beam tint" id="fis-bm"></div><div class="hd c-fis" id="fis-hd" style="font-size:84px"><span class="tt" style="display:inline-block">FRUTAS FÍSICAS</span></div><div class="ul" id="fis-ul"></div><div class="phrase c-fis" id="fis-ph"><span class="pw a">LAS</span><span class="pw">TIENES</span><span class="pw">YA</span></div></div>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const D = {"k": "fis", "dur": 7.800000000002168};
+tl.fromTo("#fis-hd .tt", { x: -520, skewX: 28, opacity: 0 }, { x: 0, skewX: 0, opacity: 1, duration: .45, ease: "expo.out" }, .22);
+  const k = D.k;
+  tl.fromTo("#" + k + "-bm", { rotation: -25 }, { rotation: 30, duration: D.dur, ease: "none" }, 0);
+  tl.fromTo("#" + k + "-ul", { scaleX: 0, opacity: 0 }, { scaleX: 1, opacity: 1, duration: .4, ease: "power3.out" }, .35);
+  document.querySelectorAll("#" + k + "-ph .pw").forEach((el, i) => tl.fromTo(el, { y: 36, opacity: 0 }, { y: 0, opacity: 1, duration: .28, ease: "power3.out" }, .5 + i * .1));
+  tl.fromTo("#" + k + "-f", { scale: 1 }, { scale: 1.035, duration: D.dur, ease: "none" }, 0);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["cat-fis"] = tl;
+})();
+</script>
+</div>
+</template>
