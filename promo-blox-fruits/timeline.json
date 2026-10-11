@@ -1,0 +1,62 @@
+[
+ {
+  "kind": "intro",
+  "start": 0.0,
+  "dur": 3.75
+ },
+ {
+  "kind": "grid",
+  "start": 3.75,
+  "dur": 3.75
+ },
+ {
+  "kind": "grid",
+  "start": 7.5,
+  "dur": 3.75
+ },
+ {
+  "kind": "grid",
+  "start": 11.25,
+  "dur": 3.75
+ },
+ {
+  "kind": "grid",
+  "start": 15.0,
+  "dur": 3.75
+ },
+ {
+  "kind": "grid",
+  "start": 18.75,
+  "dur": 3.75
+ },
+ {
+  "kind": "grid",
+  "start": 22.5,
+  "dur": 3.75
+ },
+ {
+  "kind": "grid",
+  "start": 26.25,
+  "dur": 3.75
+ },
+ {
+  "kind": "grid",
+  "start": 30.0,
+  "dur": 3.75
+ },
+ {
+  "kind": "grid",
+  "start": 33.75,
+  "dur": 3.75
+ },
+ {
+  "kind": "grid",
+  "start": 37.5,
+  "dur": 3.75
+ },
+ {
+  "kind": "outro",
+  "start": 41.25,
+  "dur": 7.5
+ }
+]

@@ -1,0 +1,93 @@
+@font-face { font-family: "Lilita"; src: url("assets/fonts/lilita-one-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Lilita"; src: url("assets/fonts/lilita-one-latin-ext-400-normal.woff2") format("woff2"); font-weight: 400; unicode-range: U+0100-02AF, U+1E00-1EFF, U+20A0-20CF; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; background: #07070d; overflow: hidden; }
+body { font-family: "Lilita", "Arial Black", sans-serif; color: #fff; }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #07070d; }
+
+/* ---------- fondo ---------- */
+.bg { position: absolute; inset: 0; background:
+  radial-gradient(900px 700px at 50% 12%, rgba(255,170,0,.28), transparent 70%),
+  radial-gradient(1000px 900px at 50% 100%, rgba(70,40,160,.45), transparent 70%),
+  linear-gradient(180deg, #120a24 0%, #0a0a14 55%, #14091f 100%); }
+.beam { position: absolute; left: 50%; top: 50%; width: 2600px; height: 520px; margin-left: -1300px; margin-top: -260px;
+  background: linear-gradient(90deg, transparent, rgba(255,190,40,.16) 45%, rgba(255,230,140,.22) 50%, rgba(255,190,40,.16) 55%, transparent); opacity: .9; }
+.beam.b2 { height: 300px; margin-top: -150px; background: linear-gradient(90deg, transparent, rgba(120,90,255,.18) 50%, transparent); }
+.vig { position: absolute; inset: 0; background: radial-gradient(ellipse at center, transparent 55%, rgba(0,0,0,.65) 100%); }
+.sparks { position: absolute; inset: 0; }
+.sp { position: absolute; top: 0; border-radius: 50%; background: #ffe58a; box-shadow: 0 0 12px 4px rgba(255,190,40,.7); opacity: 0; }
+.mark { position: absolute; right: -40px; top: 760px; font-size: 520px; line-height: 1; letter-spacing: -10px; color: rgba(255,255,255,.035); transform: rotate(-90deg); transform-origin: 100% 0; white-space: nowrap; }
+
+.scene { position: absolute; inset: 0; }
+
+/* ---------- cabecera ---------- */
+.hd { position: absolute; top: 95px; left: 0; width: 1080px; text-align: center; }
+.t1 { font-size: 128px; line-height: 1; letter-spacing: 2px; text-shadow: 0 8px 0 #000, 0 0 40px rgba(255,170,0,.45); -webkit-text-stroke: 4px #000; paint-order: stroke fill; }
+.t1 em { display: block; font-style: normal; font-size: 88px; }
+.t1 span { display: block; color: #ffc61a; }
+.t2 { margin-top: 14px; font-size: 40px; color: #d8d3ff; letter-spacing: 1px; }
+.dots { margin-top: 18px; height: 16px; }
+.dots i { display: inline-block; width: 16px; height: 16px; margin: 0 7px; border-radius: 8px; background: rgba(255,255,255,.28); }
+.dots i.on { width: 46px; background: #ffc61a; }
+
+/* ---------- cuadrícula ---------- */
+.grid { position: absolute; left: 40px; top: 470px; width: 960px; display: grid; grid-template-columns: 460px 460px; gap: 30px 40px; justify-content: center; }
+.grid.oddlast .card:last-child { grid-column: 1 / -1; justify-self: center; width: 460px; }
+.card { position: relative; width: 460px; border-radius: 34px; overflow: hidden; text-align: center; padding: 18px 14px 14px;
+  background: #171719; border: 5px solid #8a6a1c;
+  box-shadow: 0 14px 0 rgba(0,0,0,.55), 0 0 40px rgba(255,180,0,.18), inset 0 0 0 3px rgba(255,214,90,.12); }
+.ico { width: 100%; display: flex; align-items: center; justify-content: center; }
+.ico img { max-width: 100%; max-height: 100%; object-fit: contain; filter: drop-shadow(0 8px 14px rgba(0,0,0,.6)); border-radius: 18px; }
+.nm { margin-top: 8px; font-size: 44px; line-height: 1.05; color: #fff; text-shadow: 0 3px 0 #000; white-space: nowrap; }
+.nm.sm { font-size: 31px; padding-top: 7px; }
+.price { display: inline-block; margin-top: 10px; padding: 2px 30px 6px; border-radius: 50px; font-size: 64px; line-height: 1.1; color: #2a1800;
+  background: linear-gradient(180deg, #fff3a8 0%, #ffc61a 55%, #f09a00 100%); box-shadow: 0 6px 0 #8a5200, 0 0 24px rgba(255,200,0,.55); }
+.price .cur { font-size: 44px; margin-right: 3px; vertical-align: 6px; }
+.price .mxn { font-size: 28px; margin-left: 8px; letter-spacing: 1px; }
+.shine { position: absolute; top: -20px; left: 0; width: 90px; height: 480px; transform: skewX(-20deg); z-index: 3; pointer-events: none; opacity: 0;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent); }
+
+/* ---------- pie ---------- */
+.foot { position: absolute; left: 0; width: 1080px; top: 1640px; text-align: center; font-size: 34px; color: #cfcaf5; text-shadow: 0 3px 0 #000; }
+.foot b { color: #ffc61a; font-weight: 400; }
+.flag { display: inline-flex; width: 52px; height: 34px; border-radius: 6px; overflow: hidden; vertical-align: -6px; margin-right: 12px; box-shadow: 0 0 0 3px rgba(0,0,0,.5); }
+.flag i { flex: 1; display: block; }
+.flag i:nth-child(1) { background: #006847; } .flag i:nth-child(2) { background: #f4f4f4; } .flag i:nth-child(3) { background: #ce1126; }
+
+/* ---------- intro ---------- */
+.flags { position: absolute; top: 130px; left: 0; width: 1080px; text-align: center; }
+.flags .flag { width: 120px; height: 78px; margin: 0 330px 0 0; }
+.flags .flag:last-child { margin: 0; }
+.crown { position: absolute; top: 250px; left: 400px; width: 280px; filter: drop-shadow(0 10px 0 #000) drop-shadow(0 0 30px rgba(255,200,0,.7)); }
+.big1 { position: absolute; top: 470px; left: 0; width: 1080px; text-align: center; font-size: 300px; line-height: 1; color: #ffc61a; -webkit-text-stroke: 12px #000; paint-order: stroke fill; text-shadow: 0 14px 0 #000, 0 0 60px rgba(255,170,0,.7); }
+.big2 { position: absolute; top: 790px; left: 0; width: 1080px; text-align: center; font-size: 140px; line-height: 1; color: #fff; -webkit-text-stroke: 8px #000; paint-order: stroke fill; text-shadow: 0 8px 0 #000; }
+.big3 { position: absolute; top: 930px; left: 0; width: 1080px; text-align: center; font-size: 140px; line-height: 1; color: #4fc3ff; -webkit-text-stroke: 8px #000; paint-order: stroke fill; text-shadow: 0 8px 0 #000, 0 0 40px rgba(60,160,255,.7); }
+.chips { position: absolute; top: 1150px; left: 0; width: 1080px; text-align: center; }
+.chips span { display: inline-block; margin: 0 10px; padding: 8px 30px 12px; border-radius: 50px; font-size: 46px; background: #1c1c20; border: 4px solid #ffc61a; color: #fff; box-shadow: 0 6px 0 #000; }
+.from { position: absolute; top: 1290px; left: 0; width: 1080px; text-align: center; font-size: 76px; color: #2a1800; transform: rotate(-3deg); }
+.from { display: block; margin: 0 auto; width: 720px; left: 180px; padding: 12px 0 18px; border-radius: 70px; background: linear-gradient(180deg, #fff3a8, #ffc61a 55%, #f09a00); box-shadow: 0 8px 0 #8a5200, 0 0 40px rgba(255,200,0,.6); }
+.from b { font-size: 112px; vertical-align: -8px; }
+.fl { position: absolute; width: 270px; height: 200px; padding: 10px; border-radius: 34px; background: #171719; border: 5px solid #8a6a1c; box-shadow: 0 10px 0 rgba(0,0,0,.6), 0 0 36px rgba(255,180,0,.3); }
+.fl img { width: 100%; height: 100%; object-fit: contain; border-radius: 20px; }
+.fl.sm { width: 220px; height: 162px; border-width: 4px; padding: 8px; }
+
+/* ---------- cierre ---------- */
+.o1 { position: absolute; top: 560px; left: 0; width: 1080px; text-align: center; font-size: 130px; line-height: 1.02; color: #fff; -webkit-text-stroke: 8px #000; paint-order: stroke fill; text-shadow: 0 8px 0 #000; }
+.o1 span { color: #ffc61a; font-size: 190px; }
+.o2 { position: absolute; top: 1010px; left: 0; width: 1080px; text-align: center; font-size: 56px; line-height: 1.2; color: #e9e5ff; text-shadow: 0 4px 0 #000; }
+.cta { position: absolute; top: 1210px; left: 130px; width: 820px; text-align: center; font-size: 92px; padding: 18px 0 26px; border-radius: 100px; color: #2a1800;
+  background: linear-gradient(180deg, #fff3a8, #ffc61a 55%, #f09a00); box-shadow: 0 10px 0 #8a5200, 0 0 60px rgba(255,200,0,.75); }
+.handle { position: absolute; top: 1420px; left: 0; width: 1080px; text-align: center; font-size: 52px; line-height: 1.3; text-shadow: 0 4px 0 #000; }
+.handle b { color: #ffc61a; font-weight: 400; }
+.o3 { position: absolute; top: 1560px; left: 0; width: 1080px; text-align: center; font-size: 32px; color: #bdb7e6; }
+
+/* tarjeta horizontal (gamepasses) */
+.card.h { display: flex; align-items: center; text-align: left; padding: 10px 14px; }
+.card.h .ico { width: 170px; flex: none; }
+.card.h .tx { flex: 1; padding-left: 10px; }
+.card.h .nm { margin: 0; font-size: 38px; white-space: normal; text-align: left; }
+.card.h .nm.sm { font-size: 34px; padding: 0; }
+.card.h .price { margin-top: 8px; font-size: 52px; padding: 0 22px 4px; }
+.card.h .price .cur { font-size: 36px; vertical-align: 4px; }
+.card.h .price .mxn { font-size: 22px; }
+.grid.gp { gap: 30px 40px; }
