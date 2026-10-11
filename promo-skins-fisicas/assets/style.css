@@ -1,0 +1,132 @@
+@font-face { font-family: "Lilita"; src: url("fonts/lilita-one-latin-400-normal.woff2") format("woff2"); font-weight: 400; }
+@font-face { font-family: "Lilita"; src: url("fonts/lilita-one-latin-ext-400-normal.woff2") format("woff2"); font-weight: 400; unicode-range: U+0100-02AF, U+1E00-1EFF, U+20A0-20CF; }
+@font-face { font-family: "Noto Color Emoji"; src: local("Noto Color Emoji"); }
+:root { --gold: #FFC21A; --gold2: #FFE27A; --orange: #FF8A00; --blue: #2FA8FF; --blue2: #7BD3FF; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; background: #000; overflow: hidden; }
+body { font-family: "Lilita", "Noto Color Emoji", "Arial Black", sans-serif; color: #fff; }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+.mount { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+#m-bg { z-index: 1; } #m-s1, #m-s2, #m-s3, #m-s4, #m-s5, #m-s6 { z-index: 2; } #m-fx { z-index: 3; } #m-hud { z-index: 4; } #m-subs { z-index: 5; }
+[data-composition-id] { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; }
+.fill { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+.scn { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 50% 50%; }
+
+/* ---------- fondo: fibra de carbono + luz dorada ---------- */
+.carbon { position: absolute; left: -160px; top: -160px; width: 1400px; height: 2240px; background-color: #131313;
+  background-image:
+    linear-gradient(27deg, #151515 5px, transparent 5px), linear-gradient(207deg, #151515 5px, transparent 5px),
+    linear-gradient(27deg, #222 5px, transparent 5px), linear-gradient(207deg, #222 5px, transparent 5px),
+    linear-gradient(90deg, #1b1b1b 10px, transparent 10px),
+    linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
+  background-position: 0 5px, 10px 0, 0 10px, 10px 5px, 0 0, 0 0; background-size: 20px 20px; }
+.haze { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; background:
+  linear-gradient(180deg, rgba(255,194,26,.30) 0%, rgba(255,194,26,.10) 28%, rgba(0,0,0,0) 55%, rgba(0,0,0,.55) 100%); }
+.beam { position: absolute; left: 50%; top: 50%; width: 2800px; height: 420px; margin-left: -1400px; margin-top: -210px; opacity: .9;
+  background: linear-gradient(90deg, transparent, rgba(255,194,26,.18) 40%, rgba(255,240,170,.34) 50%, rgba(255,194,26,.18) 60%, transparent); }
+.beam.b2 { height: 220px; margin-top: -110px; background: linear-gradient(90deg, transparent, rgba(255,255,255,.12) 50%, transparent); }
+.beam.dark { background: linear-gradient(90deg, transparent, rgba(120,70,0,.20) 40%, rgba(255,255,255,.35) 50%, rgba(120,70,0,.20) 60%, transparent); }
+.sp { position: absolute; top: 0; border-radius: 50%; background: #ffe58a; box-shadow: 0 0 14px 5px rgba(255,190,40,.75); opacity: 0; }
+
+/* ---------- tipografía ---------- */
+.gtw { position: relative; display: inline-block; line-height: 1; white-space: nowrap; }
+.gtw .o { position: absolute; left: 0; top: 0; color: #000; -webkit-text-stroke: 22px #000; }
+.gtw .f { position: relative; color: transparent; -webkit-background-clip: text; background-clip: text; background-repeat: no-repeat; }
+.gtw .f.sk { background-image: linear-gradient(100deg, transparent 35%, rgba(255,255,255,.95) 50%, transparent 65%), linear-gradient(180deg, #fff27a 0%, #ffb800 45%, #ff6a00 100%); background-size: 260% 100%, 100% 100%; background-position: 160% 0, 0 0; }
+.gtw .f.fi { background-image: linear-gradient(100deg, transparent 35%, rgba(255,255,255,.95) 50%, transparent 65%), linear-gradient(180deg, #bdf0ff 0%, #2fa8ff 50%, #1559ff 100%); background-size: 260% 100%, 100% 100%; background-position: 160% 0, 0 0; }
+.gtw .f.wh { background-image: linear-gradient(100deg, transparent 35%, rgba(255,230,120,.95) 50%, transparent 65%), linear-gradient(180deg, #fff, #cfd6e4); background-size: 260% 100%, 100% 100%; background-position: 160% 0, 0 0; }
+.mask { position: relative; display: inline-block; overflow: hidden; padding: 24px 26px 34px; margin: -24px -26px -34px; vertical-align: top; }
+
+/* ---------- HUD ---------- */
+.hud-flag { position: absolute; top: 40px; font-size: 104px; line-height: 1; filter: drop-shadow(0 6px 0 rgba(0,0,0,.7)); }
+.hud-label { position: absolute; top: 66px; left: 160px; width: 760px; height: 72px; border-radius: 40px; background: #000; border: 4px solid var(--gold);
+  box-shadow: 0 0 26px rgba(255,194,26,.65), 0 6px 0 rgba(0,0,0,.6); text-align: center; font-size: 38px; line-height: 64px; letter-spacing: 1px; color: var(--gold); overflow: hidden; }
+.hud-label b { font-weight: 400; color: #fff; }
+.hud-shine { position: absolute; top: 0; left: 0; width: 90px; height: 100px; transform: skewX(-20deg); background: linear-gradient(90deg, transparent, rgba(255,255,255,.7), transparent); opacity: 0; }
+.hud-handle { position: absolute; left: 0; width: 1080px; top: 1508px; text-align: center; }
+.hud-handle span { display: inline-block; padding: 4px 28px 8px; border-radius: 40px; background: rgba(0,0,0,.72); border: 3px solid rgba(255,194,26,.7); font-size: 36px; color: var(--gold); letter-spacing: 1px; }
+
+/* ---------- subtítulos ---------- */
+.sub { position: absolute; left: 90px; width: 900px; top: 1330px; height: 170px; text-align: center; opacity: 0; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 0 22px; align-content: center; }
+.sw { display: inline-block; font-size: 92px; line-height: 1.02; color: var(--gold); -webkit-text-stroke: 14px #000; paint-order: stroke fill; text-shadow: 0 8px 0 #000; opacity: 0; }
+
+/* ---------- escena 1 ---------- */
+.s1gold { position: absolute; left: 190px; top: 760px; width: 700px; height: 700px; border-radius: 50%; background: linear-gradient(180deg, #ffd84a 0%, #ffc21a 55%, #ff9d00 100%); transform: scale(0); }
+.s1rays { position: absolute; left: 50%; top: 50%; width: 3000px; height: 3000px; margin-left: -1500px; margin-top: -1500px; opacity: .55;
+  background: repeating-linear-gradient(0deg, rgba(255,255,255,.55) 0 30px, transparent 30px 120px); }
+.s1txt { position: absolute; left: 0; top: 430px; width: 1080px; text-align: center; font-size: 134px; line-height: 1.0; }
+.s1txt .ln { display: block; height: 138px; }
+.s1txt .w { display: inline-block; overflow: visible; }
+.s1txt .wi { display: inline-block; }
+.s1txt.main { color: #0b0b0b; -webkit-text-stroke: 16px #fff; paint-order: stroke fill; text-shadow: 0 10px 0 #000; }
+.s1txt.main .acc { color: #d40000; }
+.s1txt.gl { opacity: .85; }
+.s1txt.gl.c { color: #00f0ff; } .s1txt.gl.m { color: #ff2bd6; }
+.s1txt .em { font-size: 120px; }
+.icc { position: absolute; width: 290px; height: 215px; padding: 8px; border-radius: 30px; background: #000; border: 5px solid #fff; box-shadow: 0 0 0 5px #000, 0 0 40px rgba(255,255,255,.65); }
+.icc img { width: 100%; height: 100%; object-fit: contain; border-radius: 20px; }
+
+/* ---------- escena 2 ---------- */
+.s2title { position: absolute; left: 0; top: 590px; width: 1080px; text-align: center; transform-origin: 50% 50%; }
+.s2title .l1, .s2title .l2 { display: block; font-size: 196px; line-height: 1.02; }
+.s2title .l1 .gtw + .gtw { margin-left: 26px; }
+.bigflag { position: absolute; font-size: 150px; line-height: 1; top: 1090px; filter: drop-shadow(0 8px 0 rgba(0,0,0,.7)); }
+.mxpill { position: absolute; left: 190px; width: 700px; top: 1130px; text-align: center; font-size: 62px; padding: 8px 0 14px; border-radius: 60px; color: #fff; background: #000; border: 5px solid var(--gold); box-shadow: 0 0 40px rgba(255,194,26,.75), 0 8px 0 rgba(0,0,0,.6); letter-spacing: 2px; }
+.mxpill b { font-weight: 400; color: var(--gold); }
+
+/* ---------- escena 3 (skins) ---------- */
+.shead { position: absolute; left: 0; top: 250px; width: 1080px; text-align: center; font-size: 150px; line-height: 1; }
+.skc { position: absolute; width: 300px; height: 358px; }
+.skc-in { position: absolute; left: 0; top: 0; width: 300px; height: 358px; border-radius: 26px; overflow: hidden; border: 5px solid var(--gold);
+  background: #151517; box-shadow: 0 26px 40px rgba(0,0,0,.75), 0 0 36px rgba(255,194,26,.45), inset 0 0 0 2px rgba(255,255,255,.18); }
+.skc-in img { width: 100%; height: 100%; display: block; }
+.gloss { position: absolute; top: -40px; left: 0; width: 80px; height: 460px; transform: skewX(-20deg); background: linear-gradient(90deg, transparent, rgba(255,255,255,.65), transparent); opacity: 0; }
+.ring { position: absolute; left: -16px; top: -16px; width: 332px; height: 390px; border-radius: 40px; border: 8px solid #fff; opacity: 0;
+  box-shadow: 0 0 0 4px var(--gold), 0 0 50px 8px rgba(255,194,26,.95), inset 0 0 36px rgba(255,194,26,.7); }
+.cn { position: absolute; left: 140px; top: 300px; width: 22px; height: 22px; border-radius: 50%; background: linear-gradient(180deg, #fff6a8, #ffb400); border: 3px solid #a86500; opacity: 0; }
+
+/* ---------- escena 4 (físicas) ---------- */
+.s4head { position: absolute; left: 0; top: 245px; width: 1080px; text-align: center; font-size: 140px; line-height: 1; }
+.s4wrap { position: absolute; left: 90px; top: 410px; width: 900px; height: 940px; }
+.s4view { position: absolute; left: 0; top: 0; width: 900px; height: 940px; border-radius: 26px; overflow: hidden; background: #0d0d0d; border: 6px solid var(--gold);
+  box-shadow: 0 50px 70px rgba(0,0,0,.8), 0 0 60px rgba(255,194,26,.55), inset 0 0 0 3px rgba(255,255,255,.15); }
+.s4cam { position: absolute; left: 0; top: 0; width: 900px; transform-origin: 0 0; }
+.s4cam img { width: 900px; display: block; }
+.s4ring { position: absolute; border-radius: 16px; border: 6px solid #fff; opacity: 0; box-shadow: 0 0 0 3px var(--gold), 0 0 34px 6px rgba(255,194,26,.95); }
+.s4glint { position: absolute; top: -60px; left: 0; width: 170px; height: 1100px; transform: skewX(-18deg); background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent); opacity: 0; }
+
+/* ---------- escena 5 (trades) ---------- */
+.s5head { position: absolute; left: 0; top: 262px; width: 1080px; text-align: center; font-size: 84px; line-height: 1; color: #fff; -webkit-text-stroke: 14px #000; paint-order: stroke fill; text-shadow: 0 8px 0 #000; }
+.s5head .g { color: var(--gold); }
+.s5head .ck { display: inline-block; font-size: 66px; -webkit-text-stroke: 0; margin-left: 8px; vertical-align: 2px; }
+.tc { position: absolute; left: 140px; top: 400px; width: 800px; height: 640px; border-radius: 18px; overflow: hidden; background: #000; border: 6px solid var(--gold);
+  box-shadow: 0 34px 60px rgba(0,0,0,.8), 0 0 50px rgba(255,194,26,.6); }
+.tc img { width: 100%; height: 100%; display: block; object-fit: fill; }
+.tc .gloss { height: 700px; }
+.seal { position: absolute; left: 30px; top: 1160px; width: 505px; height: 108px; border-radius: 60px; text-align: center; line-height: 98px; font-size: 44px; white-space: nowrap; color: #1a1000; letter-spacing: 1px; overflow: hidden;
+  background: linear-gradient(180deg, #fff3a0, #ffc21a 55%, #f09000); border: 5px solid #fff; box-shadow: 0 0 50px rgba(255,194,26,.95), 0 8px 0 #6a4300; }
+.counter { position: absolute; left: 550px; top: 1160px; width: 470px; height: 108px; border-radius: 60px; text-align: center; line-height: 98px; font-size: 36px; white-space: nowrap; color: #fff; background: #000; border: 5px solid var(--gold); box-shadow: 0 0 40px rgba(255,194,26,.7), 0 8px 0 rgba(0,0,0,.6); letter-spacing: 1px; }
+.counter b { font-weight: 400; color: var(--gold); font-size: 52px; }
+
+/* ---------- escena 6 (cierre) ---------- */
+.s6gold { background: linear-gradient(180deg, #ffd23a 0%, #ffc21a 50%, #ff9d00 100%); }
+.s6txt { position: absolute; left: 0; top: 265px; width: 1080px; text-align: center; font-size: 150px; line-height: 1.0; color: #0b0b0b; }
+.s6txt .ln { display: block; }
+.s6txt .mask { padding: 20px 30px 30px; margin: -20px -30px -30px; }
+.s6txt .wd { display: inline-block; text-shadow: 0 8px 0 rgba(255,255,255,.55); }
+.s6txt .em { font-size: 130px; }
+.arrow { position: absolute; left: 450px; top: 725px; width: 180px; height: 117px; }
+.neon { position: absolute; left: 40px; width: 1000px; top: 858px; height: 140px; border-radius: 40px; text-align: center; line-height: 128px; font-size: 96px; color: #fff; background: #08080b; border: 6px solid #fff;
+  text-shadow: 0 0 10px #fff, 0 0 24px #ffc21a, 0 0 48px #ffc21a, 0 0 80px #ff9d00; box-shadow: 0 0 0 5px #000, 0 0 50px rgba(0,0,0,.6), inset 0 0 30px rgba(255,194,26,.35); }
+.slogan { position: absolute; left: 0; top: 1030px; width: 1080px; text-align: center; font-size: 92px; line-height: 1.0; color: #0b0b0b; }
+.slogan .ln { display: block; }
+.slogan .wd { display: inline-block; text-shadow: 0 6px 0 rgba(255,255,255,.55); }
+.slogan .mask { padding: 18px 24px 26px; margin: -18px -24px -26px; }
+.only { position: absolute; left: 0; top: 1255px; width: 1080px; text-align: center; font-size: 44px; color: #0b0b0b; }
+
+/* ---------- transiciones ---------- */
+.sweep { position: absolute; top: -300px; left: -500px; width: 520px; height: 2600px; transform: rotate(18deg); opacity: 0;
+  background: linear-gradient(90deg, rgba(255,194,26,0), rgba(255,194,26,.9) 30%, #fff 50%, rgba(255,194,26,.9) 70%, rgba(255,194,26,0)); box-shadow: 0 0 120px 40px rgba(255,214,80,.9); }
+.sl { position: absolute; left: 0; width: 1080px; opacity: 0; }
+.flash { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; opacity: 0; }
+.shock { position: absolute; left: 240px; top: 660px; width: 600px; height: 600px; border-radius: 50%; border: 60px solid #FFC21A; opacity: 0; box-shadow: 0 0 80px 20px rgba(255,214,80,.95), inset 0 0 80px 20px rgba(255,214,80,.9); }

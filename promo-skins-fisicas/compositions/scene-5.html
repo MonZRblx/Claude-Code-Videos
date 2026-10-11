@@ -1,0 +1,35 @@
+<template id="scene-5-template">
+<div data-composition-id="scene-5" data-width="1080" data-height="1920" data-start="0" data-duration="6.818">
+<div class="scn" id="s5"><div class="beam" id="s5-beam"></div><div class="s5head" id="s5-head"><span class="g"><span class="lt" style="display:inline-block">T</span><span class="lt" style="display:inline-block">R</span><span class="lt" style="display:inline-block">A</span><span class="lt" style="display:inline-block">D</span><span class="lt" style="display:inline-block">E</span><span class="lt" style="display:inline-block">S</span><span class="lt" style="display:inline-block;width:.35em">&nbsp;</span><span class="lt" style="display:inline-block">R</span><span class="lt" style="display:inline-block">E</span><span class="lt" style="display:inline-block">A</span><span class="lt" style="display:inline-block">L</span><span class="lt" style="display:inline-block">E</span><span class="lt" style="display:inline-block">S</span></span> <span class="ck" id="s5-k0">✅</span><span class="ck" id="s5-k1">✅</span><span class="ck" id="s5-k2">✅</span></div><div class="tc" id="s5-c3"><img src="assets/captures/trade_darkblade.png"><div class="gloss" id="s5-g3"></div></div><div class="tc" id="s5-c2"><img src="assets/captures/trade_dragon.png"><div class="gloss" id="s5-g2"></div></div><div class="tc" id="s5-c1"><img src="assets/captures/trade_portal_yeti.png"><div class="gloss" id="s5-g1"></div></div><div class="tc" id="s5-c0"><img src="assets/captures/trade_kitsune.png"><div class="gloss" id="s5-g0"></div></div><div class="seal" id="s5-seal">✅ 100% CONFIABLE<div class="hud-shine" id="s5-sh" style="height:120px"></div></div><div class="counter" id="s5-count">+<b id="s5-cnt">0</b> REFERENCIAS</div></div>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const D = {"dur": 6.818, "fan": [{"rot": -16.5, "x": -210, "y": 36}, {"rot": -5.5, "x": -70, "y": 12}, {"rot": 5.5, "x": 70, "y": 12}, {"rot": 16.5, "x": 210, "y": 36}], "slot0": 1.75, "slotw": 1.2045, "seal": 0.95, "cnt0": 1.6, "cnt1": 2.4};
+
+  tl.fromTo("#s5-beam", { rotation: 10 }, { rotation: -35, duration: D.dur, ease: "none" }, 0);
+  document.querySelectorAll("#s5-head .lt").forEach((el, i) => tl.fromTo(el, { y: -90, opacity: 0, scale: 1.6 }, { y: 0, opacity: 1, scale: 1, duration: .3, ease: "back.out(2)" }, .1 + i * .05));
+  [0, 1, 2].forEach(i => tl.fromTo("#s5-k" + i, { scale: 0, rotation: -40 }, { scale: 1, rotation: 0, duration: .45, ease: "elastic.out(1,.45)" }, .85 + i * .22));
+  const N = D.fan.length;
+  for (let i = 0; i < N; i++) {
+    tl.set("#s5-c" + i, { transformPerspective: 1100 }, 0);
+    tl.fromTo("#s5-c" + i, { y: -1300, rotation: (i % 2 ? 25 : -25), scale: .9, opacity: 1 }, { y: 4 * (N - i), x: 0, rotation: 0, scale: .9, duration: .5, ease: "back.out(1.5)" }, .1 + i * .08);
+    tl.to("#s5-c" + i, { x: D.fan[i].x, y: D.fan[i].y - 20, rotation: D.fan[i].rot, scale: .86, duration: .55, ease: "back.out(1.6)" }, .75);
+    const t = D.slot0 + D.slotw * i;
+    tl.to("#s5-c" + i, { x: 0, y: -10, rotation: 0, scale: 1.1, rotationY: 0, duration: .45, ease: "power3.out" }, t);
+    tl.fromTo("#s5-g" + i, { x: -200, opacity: .9 }, { x: 1000, opacity: .9, duration: .6, ease: "power2.inOut" }, t + .2);
+    if (i < N - 1) tl.to("#s5-c" + i, { x: -1300, y: -260, rotation: -28, scale: .8, duration: .4, ease: "power3.in" }, t + D.slotw - .32);
+    else tl.to("#s5-c" + i, { scale: 1.16, duration: D.slotw, ease: "none" }, t + .45);
+  }
+  tl.fromTo("#s5-seal", { scale: 2.8, rotation: -14, opacity: 0 }, { scale: 1, rotation: -3, opacity: 1, duration: .5, ease: "back.out(1.7)" }, D.seal);
+  tl.to("#s5-seal", { scale: 1.06, duration: .32, yoyo: true, repeat: 7, ease: "sine.inOut" }, D.seal + .6);
+  for (let t = D.seal + .7; t < D.dur - .4; t += 1.3) tl.fromTo("#s5-sh", { x: -120, opacity: .9 }, { x: 560, opacity: .9, duration: .55, ease: "power2.inOut" }, t);
+  tl.fromTo("#s5-count", { y: 120, opacity: 0 }, { y: 0, opacity: 1, duration: .45, ease: "back.out(2)" }, D.cnt0 - .2);
+  tl.fromTo("#s5-cnt", { textContent: 0 }, { textContent: 100, snap: { textContent: 1 }, duration: D.cnt1, ease: "power2.out" }, D.cnt0);
+  tl.to("#s5-count", { scale: 1.12, duration: .2, yoyo: true, repeat: 1 }, D.cnt0 + D.cnt1);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["scene-5"] = tl;
+})();
+</script>
+</div>
+</template>

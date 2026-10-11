@@ -1,0 +1,35 @@
+<template id="fx-template">
+<div data-composition-id="fx" data-width="1080" data-height="1920" data-start="0" data-duration="33.09">
+<div class="sweep" id="fx-sweep"></div><div class="sl" id="fx-sl0" style="top:-20px;height:295px;background:#000"></div><div class="sl" id="fx-sl1" style="top:255px;height:295px;background:#FFC21A"></div><div class="sl" id="fx-sl2" style="top:530px;height:295px;background:#fff"></div><div class="sl" id="fx-sl3" style="top:805px;height:295px;background:#00f0ff"></div><div class="sl" id="fx-sl4" style="top:1080px;height:295px;background:#ff2bd6"></div><div class="sl" id="fx-sl5" style="top:1355px;height:295px;background:#FFC21A"></div><div class="sl" id="fx-sl6" style="top:1630px;height:295px;background:#000"></div><div class="flash" id="fx-wh" style="background:#fff"></div><div class="flash" id="fx-gd" style="background:#FFC21A"></div><div class="shock" id="fx-shock"></div><div class="flash" id="fx-end" style="background:#fff"></div>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const D = {"B": [2.727, 5.909, 10.909, 17.727, 24.545], "sl": [{"y": -20, "h": 295, "c": "#000", "dx": -1}, {"y": 255, "h": 295, "c": "#FFC21A", "dx": -1}, {"y": 530, "h": 295, "c": "#fff", "dx": -1}, {"y": 805, "h": 295, "c": "#00f0ff", "dx": 1}, {"y": 1080, "h": 295, "c": "#ff2bd6", "dx": -1}, {"y": 1355, "h": 295, "c": "#FFC21A", "dx": 1}, {"y": 1630, "h": 295, "c": "#000", "dx": 1}]};
+
+  const [b2, b3, b4, b5, b6] = D.B;
+  const FT = (s, a, c, t) => tl.fromTo(s, a, { ...c, immediateRender: false }, t);
+  // 1→2 barrido de luz dorada
+  FT("#fx-sweep", { x: -300, opacity: 1 }, { x: 1900, opacity: 1, duration: .62, ease: "power2.inOut" }, b2 - .3);
+  tl.set("#fx-sweep", { opacity: 0 }, b2 + .34);
+  // 2→3 zoom a través del título (flash dorado)
+  FT("#fx-gd", { opacity: 0 }, { opacity: .85, duration: .12, ease: "power2.in" }, b3 - .14);
+  tl.to("#fx-gd", { opacity: 0, duration: .35, ease: "power2.out" }, b3 - .02);
+  // 3→4 glitch lateral por franjas
+  D.sl.forEach((o, i) => {
+    FT("#fx-sl" + i, { x: o.dx * -1200, opacity: 1 }, { x: 0, duration: .13, ease: "power2.out" }, b4 - .22 + i * .02);
+    tl.to("#fx-sl" + i, { x: o.dx * 1200, duration: .15, ease: "power2.in" }, b4 + .02 + i * .02);
+    tl.set("#fx-sl" + i, { opacity: 0 }, b4 + .3);
+  });
+  // 4→5 corte seco con destello blanco
+  FT("#fx-wh", { opacity: 1 }, { opacity: 0, duration: .3, ease: "power2.out" }, b5);
+  // 5→6 onda de luz dorada
+  FT("#fx-shock", { scale: .1, opacity: 1 }, { scale: 7, opacity: 0, duration: .8, ease: "power2.out" }, b6 - .08);
+  FT("#fx-gd", { opacity: 0 }, { opacity: .9, duration: .08 }, b6 - .06);
+  tl.to("#fx-gd", { opacity: 0, duration: .35 }, b6 + .02);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["fx"] = tl;
+})();
+</script>
+</div>
+</template>

@@ -1,0 +1,22 @@
+<template id="hud-template">
+<div data-composition-id="hud" data-width="1080" data-height="1920" data-start="0" data-duration="33.09">
+<div class="hud-flag" id="hud-fl" style="left:26px">🇲🇽</div><div class="hud-flag" id="hud-fr" style="right:26px">🇲🇽</div><div class="hud-label" id="hud-lb">VENTA SOLO PARA <b>MÉXICO</b> 🇲🇽<div class="hud-shine" id="hud-sh"></div></div><div class="hud-handle" id="hud-hd"><span>@monzmc05</span></div>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const D = {"total": 33.09};
+
+  tl.fromTo("#hud-fl", { y: -160, rotation: -30, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: .6, ease: "back.out(2)" }, .15);
+  tl.fromTo("#hud-fr", { y: -160, rotation: 30, opacity: 0 }, { y: 0, rotation: 0, opacity: 1, duration: .6, ease: "back.out(2)" }, .25);
+  tl.fromTo("#hud-lb", { scale: .3, opacity: 0 }, { scale: 1, opacity: 1, duration: .55, ease: "back.out(2.2)" }, .35);
+  tl.fromTo("#hud-hd", { y: 60, opacity: 0 }, { y: 0, opacity: 1, duration: .5, ease: "power3.out" }, .6);
+  tl.to("#hud-fl", { rotation: 5, duration: .9, yoyo: true, repeat: Math.ceil(D.total / .9), ease: "sine.inOut" }, 1);
+  tl.to("#hud-fr", { rotation: -5, duration: .9, yoyo: true, repeat: Math.ceil(D.total / .9), ease: "sine.inOut" }, 1.2);
+  for (let t = 1.6; t < D.total; t += 2.6) tl.fromTo("#hud-sh", { x: -120, opacity: .9 }, { x: 860, opacity: .9, duration: .6, ease: "power2.inOut" }, t);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["hud"] = tl;
+})();
+</script>
+</div>
+</template>

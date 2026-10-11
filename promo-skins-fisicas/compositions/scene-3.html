@@ -1,0 +1,31 @@
+<template id="scene-3-template">
+<div data-composition-id="scene-3" data-width="1080" data-height="1920" data-start="0" data-duration="5.0">
+<div class="scn" id="s3"><div class="beam dark" id="s3-beam"></div><div class="shead" id="s3-head"><span class="gtw"><span class="o">SKINS</span><span class="f sk">SKINS</span></span></div><div class="skc" id="s3-c0" style="left:70px;top:450px"><div class="skc-in" id="s3-in0"><img src="assets/captures/skin_00.png"><div class="gloss" id="s3-g0"></div></div><div class="ring" id="s3-r0"></div><i class="cn" id="s3-n0_0"></i><i class="cn" id="s3-n0_1"></i><i class="cn" id="s3-n0_2"></i><i class="cn" id="s3-n0_3"></i><i class="cn" id="s3-n0_4"></i><i class="cn" id="s3-n0_5"></i></div><div class="skc" id="s3-c1" style="left:390px;top:450px"><div class="skc-in" id="s3-in1"><img src="assets/captures/skin_01.png"><div class="gloss" id="s3-g1"></div></div><div class="ring" id="s3-r1"></div><i class="cn" id="s3-n1_0"></i><i class="cn" id="s3-n1_1"></i><i class="cn" id="s3-n1_2"></i><i class="cn" id="s3-n1_3"></i><i class="cn" id="s3-n1_4"></i><i class="cn" id="s3-n1_5"></i></div><div class="skc" id="s3-c2" style="left:710px;top:450px"><div class="skc-in" id="s3-in2"><img src="assets/captures/skin_02.png"><div class="gloss" id="s3-g2"></div></div><div class="ring" id="s3-r2"></div><i class="cn" id="s3-n2_0"></i><i class="cn" id="s3-n2_1"></i><i class="cn" id="s3-n2_2"></i><i class="cn" id="s3-n2_3"></i><i class="cn" id="s3-n2_4"></i><i class="cn" id="s3-n2_5"></i></div><div class="skc" id="s3-c3" style="left:70px;top:834px"><div class="skc-in" id="s3-in3"><img src="assets/captures/skin_03.png"><div class="gloss" id="s3-g3"></div></div><div class="ring" id="s3-r3"></div><i class="cn" id="s3-n3_0"></i><i class="cn" id="s3-n3_1"></i><i class="cn" id="s3-n3_2"></i><i class="cn" id="s3-n3_3"></i><i class="cn" id="s3-n3_4"></i><i class="cn" id="s3-n3_5"></i></div><div class="skc" id="s3-c4" style="left:390px;top:834px"><div class="skc-in" id="s3-in4"><img src="assets/captures/skin_07.png"><div class="gloss" id="s3-g4"></div></div><div class="ring" id="s3-r4"></div><i class="cn" id="s3-n4_0"></i><i class="cn" id="s3-n4_1"></i><i class="cn" id="s3-n4_2"></i><i class="cn" id="s3-n4_3"></i><i class="cn" id="s3-n4_4"></i><i class="cn" id="s3-n4_5"></i></div><div class="skc" id="s3-c5" style="left:710px;top:834px"><div class="skc-in" id="s3-in5"><img src="assets/captures/skin_11.png"><div class="gloss" id="s3-g5"></div></div><div class="ring" id="s3-r5"></div><i class="cn" id="s3-n5_0"></i><i class="cn" id="s3-n5_1"></i><i class="cn" id="s3-n5_2"></i><i class="cn" id="s3-n5_3"></i><i class="cn" id="s3-n5_4"></i><i class="cn" id="s3-n5_5"></i></div></div>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const D = {"dur": 5.0, "cards": [{"x": 70, "y": 450, "side": -1, "amp": 10, "dx": 7}, {"x": 390, "y": 450, "side": 1, "amp": 20, "dx": -6}, {"x": 710, "y": 450, "side": -1, "amp": 13, "dx": 8}, {"x": 70, "y": 834, "side": -1, "amp": 10, "dx": 7}, {"x": 390, "y": 834, "side": 1, "amp": 20, "dx": -6}, {"x": 710, "y": 834, "side": -1, "amp": 13, "dx": 8}], "bursts": [[{"x": -29, "y": -249, "rot": -134}, {"x": 39, "y": -231, "rot": 120}, {"x": 147, "y": -126, "rot": 110}, {"x": -144, "y": -230, "rot": -68}, {"x": 132, "y": -169, "rot": -102}, {"x": 90, "y": -248, "rot": 81}], [{"x": 93, "y": -211, "rot": 127}, {"x": -73, "y": -169, "rot": 125}, {"x": -73, "y": -243, "rot": -1}, {"x": -143, "y": -126, "rot": -119}, {"x": -129, "y": -187, "rot": 199}, {"x": -135, "y": -178, "rot": 42}], [{"x": 48, "y": -219, "rot": 2}, {"x": 145, "y": -223, "rot": -132}, {"x": 37, "y": -134, "rot": -182}, {"x": -81, "y": -236, "rot": -89}, {"x": -18, "y": -221, "rot": 198}, {"x": 4, "y": -217, "rot": 59}], [{"x": 47, "y": -256, "rot": -21}, {"x": 123, "y": -259, "rot": 8}, {"x": 149, "y": -169, "rot": -28}, {"x": -136, "y": -181, "rot": 110}, {"x": -67, "y": -193, "rot": 77}, {"x": 142, "y": -255, "rot": -147}], [{"x": -42, "y": -256, "rot": -64}, {"x": -5, "y": -141, "rot": -168}, {"x": 96, "y": -233, "rot": -155}, {"x": 26, "y": -127, "rot": 10}, {"x": -73, "y": -115, "rot": -50}, {"x": 68, "y": -216, "rot": -140}], [{"x": -128, "y": -121, "rot": -7}, {"x": 150, "y": -194, "rot": 82}, {"x": -8, "y": -239, "rot": -80}, {"x": -132, "y": -189, "rot": -197}, {"x": -111, "y": -137, "rot": 107}, {"x": 124, "y": -118, "rot": -99}]], "hi0": 1.75, "his": 0.44};
+
+  tl.fromTo("#s3-beam", { rotation: 25 }, { rotation: -15, duration: D.dur, ease: "none" }, 0);
+  tl.fromTo("#s3-head", { scale: .3, opacity: 0, y: 60 }, { scale: 1, opacity: 1, y: 0, duration: .5, ease: "back.out(1.8)" }, .08);
+  D.cards.forEach((o, i) => {
+    tl.set("#s3-c" + i, { transformPerspective: 900 }, 0);
+    tl.fromTo("#s3-c" + i, { y: -1000, scale: .55, rotationY: o.side * 70, opacity: 0 }, { y: 0, scale: 1, rotationY: o.side * 5, opacity: 1, duration: .75, ease: "back.out(1.4)" }, .3 + i * .14);
+    tl.to("#s3-in" + i, { y: o.amp, x: o.dx, duration: .9 + .12 * (i % 3), yoyo: true, repeat: 5, ease: "sine.inOut" }, 1 + i * .1);
+    const t = D.hi0 + D.his * i;
+    tl.fromTo("#s3-r" + i, { opacity: 0, scale: 1.35 }, { opacity: 1, scale: 1, duration: .18, ease: "power3.out" }, t);
+    tl.to("#s3-r" + i, { opacity: 0, duration: .25 }, t + .36);
+    tl.to("#s3-c" + i, { scale: 1.16, duration: .16, ease: "power2.out" }, t);
+    tl.to("#s3-c" + i, { scale: 1, duration: .34, ease: "elastic.out(1,.5)" }, t + .2);
+    tl.fromTo("#s3-g" + i, { x: -120, opacity: .9 }, { x: 420, opacity: .9, duration: .45, ease: "power2.inOut" }, t);
+    D.bursts[i].forEach((b, j) => tl.fromTo("#s3-n" + i + "_" + j, { x: 0, y: 0, opacity: 1, scale: 1, rotation: 0 }, { x: b.x, y: b.y, opacity: 0, scale: .4, rotation: b.rot, duration: .6, ease: "power2.out" }, t + .05));
+    tl.to("#s3-c" + i, { x: -1300, rotationY: 60, skewX: -20, duration: .4, ease: "power3.in" }, D.dur - .45 + i * .03);
+  });
+  tl.to("#s3-head", { y: -300, opacity: 0, duration: .35, ease: "power3.in" }, D.dur - .4);
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["scene-3"] = tl;
+})();
+</script>
+</div>
+</template>

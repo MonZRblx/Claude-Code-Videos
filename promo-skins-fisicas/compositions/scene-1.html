@@ -1,0 +1,30 @@
+<template id="scene-1-template">
+<div data-composition-id="scene-1" data-width="1080" data-height="1920" data-start="0" data-duration="2.727">
+<div class="scn" id="s1"><div class="fill" id="s1-black" style="background:#000"></div><div class="s1gold" id="s1-gold"></div><div class="s1rays" id="s1-rays"></div><div class="fill" id="s1-cam"><div class="icc" id="s1-i0" style="left:0;top:300px"><img src="assets/captures/ico_dragon.png"></div><div class="icc" id="s1-i1" style="left:0;top:1245px"><img src="assets/captures/ico_galaxy.png"></div><div class="icc" id="s1-i2" style="left:0;top:420px"><img src="assets/captures/ico_kitsune.png"></div><div class="icc" id="s1-i3" style="left:0;top:1135px"><img src="assets/captures/ico_ember.png"></div><div class="icc" id="s1-i4" style="left:0;top:330px"><img src="assets/captures/ico_magnet.png"></div><div class="icc" id="s1-i5" style="left:0;top:1255px"><img src="assets/captures/ico_control.png"></div><div class="s1txt gl m" id="s1-m"><span class="ln"><span class="w"><span class="wi">¿SKINS</span></span> <span class="w"><span class="wi">Y</span></span></span><span class="ln"><span class="w"><span class="wi">FÍSICAS</span></span></span><span class="ln"><span class="w"><span class="wi">BARATAS</span></span> <span class="w"><span class="wi">Y</span></span></span><span class="ln"><span class="w"><span class="wi">100%</span></span></span><span class="ln"><span class="w"><span class="wi">CONFIABLES?</span></span></span><span class="ln"><span class="w"><span class="wi em">😱🔥</span></span></span></div><div class="s1txt gl c" id="s1-c"><span class="ln"><span class="w"><span class="wi">¿SKINS</span></span> <span class="w"><span class="wi">Y</span></span></span><span class="ln"><span class="w"><span class="wi">FÍSICAS</span></span></span><span class="ln"><span class="w"><span class="wi">BARATAS</span></span> <span class="w"><span class="wi">Y</span></span></span><span class="ln"><span class="w"><span class="wi">100%</span></span></span><span class="ln"><span class="w"><span class="wi">CONFIABLES?</span></span></span><span class="ln"><span class="w"><span class="wi em">😱🔥</span></span></span></div><div class="s1txt main" id="s1-t"><span class="ln"><span class="w"><span class="wi">¿SKINS</span></span> <span class="w"><span class="wi">Y</span></span></span><span class="ln"><span class="w"><span class="wi">FÍSICAS</span></span></span><span class="ln"><span class="w"><span class="wi">BARATAS</span></span> <span class="w"><span class="wi">Y</span></span></span><span class="ln"><span class="w"><span class="wi">100%</span></span></span><span class="ln"><span class="w"><span class="wi">CONFIABLES?</span></span></span><span class="ln"><span class="w"><span class="wi em">😱🔥</span></span></span></div></div><div class="fill" id="s1-white" style="background:#fff;opacity:0"></div></div>
+<script>
+(function () {
+  const tl = gsap.timeline({ paused: true });
+  const D = {"dur": 2.727, "glitch": [0.95, 1.45, 1.95], "ico": [{"dir": 1, "t": 0.72}, {"dir": -1, "t": 0.9}, {"dir": -1, "t": 1.1}, {"dir": 1, "t": 1.28}, {"dir": 1, "t": 1.5}, {"dir": -1, "t": 1.68}]};
+
+  tl.to("#s1-black", { opacity: 0, duration: .01 }, .12);
+  tl.fromTo("#s1-white", { opacity: 0 }, { opacity: 1, duration: .04, ease: "none" }, .1);
+  tl.to("#s1-white", { opacity: 0, duration: .3, ease: "power2.out" }, .15);
+  tl.fromTo("#s1-gold", { scale: 0 }, { scale: 6, duration: .6, ease: "expo.out" }, .12);
+  tl.fromTo("#s1-rays", { rotation: 0, opacity: 0 }, { rotation: 40, opacity: .55, duration: D.dur, ease: "none" }, .12);
+  tl.fromTo("#s1-cam", { scale: .8 }, { scale: 1.13, duration: D.dur - .1, ease: "power2.in" }, 0);
+  ["#s1-m", "#s1-c", "#s1-t"].forEach(L => document.querySelectorAll(L + " .wi").forEach((el, i) =>
+    tl.fromTo(el, { y: 300, scale: 3, opacity: 0, rotation: i % 2 ? 10 : -10 }, { y: 0, scale: 1, opacity: 1, rotation: 0, duration: .34, ease: "back.out(1.6)" }, .32 + i * .115)));
+  D.glitch.forEach(t => {
+    tl.to("#s1-m", { x: -18, y: 6, duration: .05, yoyo: true, repeat: 5, ease: "none" }, t);
+    tl.to("#s1-c", { x: 18, y: -6, duration: .05, yoyo: true, repeat: 5, ease: "none" }, t);
+    tl.to("#s1-t", { x: 6, skewX: -6, duration: .05, yoyo: true, repeat: 3, ease: "none" }, t);
+  });
+  D.ico.forEach((o, i) => tl.fromTo("#s1-i" + i, { x: o.dir > 0 ? -420 : 1500, rotation: o.dir > 0 ? -8 : 8, skewX: o.dir > 0 ? -16 : 16 },
+    { x: o.dir > 0 ? 1500 : -420, duration: .55, ease: "power1.inOut" }, o.t));
+
+  window.__timelines = window.__timelines || {};
+  window.__timelines["scene-1"] = tl;
+})();
+</script>
+</div>
+</template>
